@@ -15,20 +15,16 @@ const Cart = () => {
   return (
     <div className="cart">
       {totalAmount > 0 ? (
-        <div>
-          <h1>Your Cart Items</h1>
+        <div className="cart-items">
+          {data.map((product) => {
+            if (cartItems[product.id] !== 0) {
+              return <CartItem key={product.id} {...product} />;
+            }
+          })}
         </div>
       ) : (
-        ""
+        " "
       )}
-      <div className="cart">
-        {data.map((product) => {
-          if (cartItems[product.id] !== 0) {
-            return <CartItem key={product.id} {...product} />;
-          }
-        })}
-      </div>
-
       {totalAmount > 0 ? (
         <div className="checkout">
           <p> Subtotal: ${totalAmount} </p>

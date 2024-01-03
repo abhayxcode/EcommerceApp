@@ -16,11 +16,11 @@ function App() {
           <Route
             path="/"
             element={
-              <>
+              <div className="body-container">
                 <Recommended />
                 <Sidebar />
                 <Homepage />
-              </>
+              </div>
             }
           />
           <Route path="/cart" element={<Cart />} />

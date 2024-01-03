@@ -1,13 +1,18 @@
 .cart {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  gap: 100px;
+  align-items: flex-start;
+  margin-top: 80px;
+  padding: 50px;
 }
 
 .cart h1 {
-  margin-top: 20px;
   text-transform: uppercase;
+}
+
+.cart-items {
+  /* margin-top: 60px; */
 }
 .cartItem {
   width: 700px;
@@ -18,6 +23,7 @@
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
   margin: 30px;
+  margin-top: 0;
 }
 
 .cartItem img {
@@ -45,6 +51,7 @@
 
 .checkout {
   font-size: 2.5rem;
+
   text-align: center;
   font-weight: 400;
 }
@@ -58,5 +65,66 @@
   margin: 10px;
   padding: 5px;
   border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
   cursor: pointer;
+}
+
+.checkout > button:hover {
+  background-color: #505050;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .cart {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .cart h1 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  .cartItem {
+    width: 80vw;
+    padding: 10px;
+    height: 100px;
+    margin: 10px 0px;
+  }
+
+  .cartItem img {
+    width: 80px;
+    margin: 0px 20px;
+  }
+
+  .cartItem .description {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .count-handler {
+    margin-top: 10px;
+  }
+  .count-handler input {
+    width: 50px;
+    height: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .count-handler .btns {
+    font-size: 20px;
+    height: 30px;
+    width: 50px;
+    padding: 0px;
+  }
+
+  .checkout {
+    font-size: 1.8rem;
+  }
+  .checkout button {
+    width: 180px;
+    height: 50px;
+  }
 }
