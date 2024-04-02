@@ -6,7 +6,7 @@ export default function Buttons({ value, title }) {
   return (
     <>
       <button
-        className="btns"
+        className="btns bg-white font-semibold"
         value={value}
         onClick={(e) => handleButtonChange(e)}
       >

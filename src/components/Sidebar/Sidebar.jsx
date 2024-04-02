@@ -5,13 +5,13 @@ import "./Sidebar.css";
 
 const Sidebar = () => {
   return (
-    <section className="sidebar">
-      <div className="logo-container">
+    <section className="flex flex-col pl-10 items-start gap-5 w-[200px] h-auto min-w-[200px] ">
+      <div className="mb-2">
         <h1>🛒</h1>
       </div>
 
-      <Categories />
       <Price />
+      <Categories />
     </section>
   );
 };

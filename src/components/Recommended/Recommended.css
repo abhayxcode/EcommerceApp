@@ -1,25 +1,3 @@
-.recommended {
-  padding: 0px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.recommended-flex {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-
-.close-btn {
-  display: none;
-}
-
-.recommended-flex > button {
-  text-transform: capitalize;
-}
-
 @media only screen and (max-width: 700px) {
   .recommended {
     position: fixed;

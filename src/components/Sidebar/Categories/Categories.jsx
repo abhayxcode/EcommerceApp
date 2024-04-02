@@ -8,7 +8,9 @@ const Categories = () => {
   return (
     <>
       <section>
-        <h2 className="sidebar-title category-title">Category</h2>
+        <h2 className="text-[22px] font-normal mb-5 category-title">
+          Category
+        </h2>
         <div>
           <label className="sidebar-label-container">
             <input

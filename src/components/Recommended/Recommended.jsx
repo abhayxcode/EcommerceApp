@@ -9,12 +9,12 @@ const Recommended = () => {
     recommended.classList.remove("transform");
   };
   return (
-    <div className="recommended">
-      <button className="close-btn" onClick={closeSidebar}>
+    <div className="p-5 flex flex-col items-center w-full">
+      <button className="close-btn hidden" onClick={closeSidebar}>
         <ImCross className="close-icon" />
       </button>
 
-      <div className="recommended-flex">
+      <div className="flex w-full justify-around">
         <Buttons value="" title="All" />
         <Buttons value={"Apple"} title="Apple" />
         <Buttons value={"Dell"} title="Dell" />

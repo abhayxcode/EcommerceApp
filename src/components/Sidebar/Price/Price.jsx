@@ -7,7 +7,9 @@ const Price = () => {
   const { handleRadioChange } = useContext(Context);
   return (
     <section>
-      <h2 className="sidebar-title price-title">Price</h2>
+      <h2 className="text-[22px] font-normal mb-5 price-title">
+        Filter by Price
+      </h2>
 
       <div>
         <label className="sidebar-label-container">
