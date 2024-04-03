@@ -12,10 +12,11 @@ const Footer = () => {
             <h2 className="md:text-3xl uppercase font-bold text-[32px] text-[#2bc0a7] tracking-[-0.50px] w-auto">
               Gadgify.
             </h2>
-            <p className="leading-[35.00px] max-w-[360px] md:max-w-full text-base text-gray-50 tracking-[-0.50px]">
-              Lorem ipsum dolor sit amet litam consectetur adipiscing elit,
-              facilisi vivamus proin lit laoreet phasel alilus porttitor inter,
-              facilisis condiment tarime egestas rhoncus dapibus iaculis alemir.
+            <p className="leading-[30.00px] max-w-[360px] md:max-w-full text-base text-gray-50">
+              At Gadgify, we're passionate about bringing you the latest and
+              most innovative gadgets to enhance your life. Explore our wide
+              selection of tech products, enjoy fast shipping, hassle-free
+              returns, and dedicated customer support.
             </p>
           </div>
           <div className="flex flex-col gap-5 items-start justify-start w-[210px]">

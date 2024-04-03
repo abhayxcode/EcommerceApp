@@ -6,7 +6,7 @@ const Products = () => {
   const { result } = useContext(Context);
   return (
     <>
-      <section className="card-container w-ful flex flex-wrap justify-evenly">
+      <section className="w-[95%] px-3  flex flex-wrap justify-start gap-5">
         {result}
       </section>
     </>

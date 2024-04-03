@@ -8,6 +8,7 @@ const data = [
     newPrice: "500",
     company: "Dell",
     category: "laptop",
+    newProduct: true,
   },
 
   {
@@ -19,6 +20,7 @@ const data = [
     newPrice: "500",
     company: "Canon",
     category: "camera",
+    newProduct: true,
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const data = [
     newPrice: "500",
     company: "HP",
     category: "laptop",
+    newProduct: false,
   },
   {
     id: 4,
@@ -39,6 +42,7 @@ const data = [
     newPrice: "50",
     company: "Boat",
     category: "headphone",
+    newProduct: true,
   },
 
   {
@@ -50,6 +54,7 @@ const data = [
     newPrice: "150",
     company: "HP",
     category: "laptop",
+    newProduct: false,
   },
 
   {
@@ -61,6 +66,7 @@ const data = [
     newPrice: "150",
     company: "Realme",
     category: "mobile",
+    newProduct: false,
   },
   {
     id: 7,
@@ -71,6 +77,7 @@ const data = [
     newPrice: "150",
     company: "",
     category: "laptop",
+    newProduct: false,
   },
 
   {
@@ -82,6 +89,7 @@ const data = [
     newPrice: "150",
     company: "Kodak",
     category: "camera",
+    newProduct: true,
   },
   {
     id: 9,
@@ -92,6 +100,7 @@ const data = [
     newPrice: "999",
     company: "Apple",
     category: "laptop",
+    newProduct: false,
   },
 
   {
@@ -103,6 +112,7 @@ const data = [
     newPrice: "150",
     company: "Kodak",
     category: "camera",
+    newProduct: false,
   },
   {
     id: 11,
@@ -113,6 +123,7 @@ const data = [
     newPrice: "999",
     company: "Apple",
     category: "mobile",
+    newProduct: false,
   },
   {
     id: 12,
@@ -123,6 +134,7 @@ const data = [
     newPrice: "999",
     company: "HP",
     category: "laptop",
+    newProduct: true,
   },
   {
     id: 13,
@@ -133,6 +145,7 @@ const data = [
     newPrice: "50",
     company: "Canon",
     category: "camera",
+    newProduct: true,
   },
 
   {
@@ -144,6 +157,7 @@ const data = [
     newPrice: "50",
     company: "HP",
     category: "camera",
+    newProduct: false,
   },
 
   {
@@ -155,6 +169,7 @@ const data = [
     newPrice: "150",
     company: "Samsung",
     category: "mobile",
+    newProduct: false,
   },
 
   {
@@ -166,6 +181,7 @@ const data = [
     newPrice: "150",
     company: "Dell",
     category: "camera",
+    newProduct: false,
   },
   {
     id: 17,
@@ -176,6 +192,7 @@ const data = [
     newPrice: "50",
     company: "Realme",
     category: "mobile",
+    newProduct: true,
   },
 
   {
@@ -187,6 +204,7 @@ const data = [
     newPrice: "150",
     company: "Sony",
     category: "camera",
+    newProduct: false,
   },
   {
     id: 19,
@@ -197,6 +215,7 @@ const data = [
     newPrice: "500",
     company: "HP",
     category: "laptop",
+    newProduct: false,
   },
   {
     id: 20,
@@ -207,6 +226,7 @@ const data = [
     newPrice: "999",
     company: "Apple",
     category: "laptop",
+    newProduct: true,
   },
 
   {
@@ -218,6 +238,7 @@ const data = [
     newPrice: "150",
     company: "Kodak",
     category: "camera",
+    newProduct: false,
   },
   {
     id: 22,
@@ -228,6 +249,7 @@ const data = [
     newPrice: "1500",
     company: "Apple",
     category: "mobile",
+    newProduct: false,
   },
 
   {
@@ -239,6 +261,7 @@ const data = [
     newPrice: "999",
     company: "Samsung",
     category: "mobile",
+    newProduct: false,
   },
   {
     id: 24,
@@ -249,6 +272,7 @@ const data = [
     newPrice: "50",
     company: "Apple",
     category: "headphone",
+    newProduct: false,
   },
   {
     id: 25,
@@ -259,6 +283,7 @@ const data = [
     newPrice: "50",
     company: "Boat",
     category: "headphone",
+    newProduct: false,
   },
 
   {
@@ -270,6 +295,7 @@ const data = [
     newPrice: "50",
     company: "Boat",
     category: "headphone",
+    newProduct: false,
   },
   {
     id: 27,
@@ -280,6 +306,7 @@ const data = [
     newPrice: "150",
     company: "Samsung",
     category: "mobile",
+    newProduct: false,
   },
   {
     id: 28,
@@ -290,6 +317,7 @@ const data = [
     newPrice: "500",
     company: "Apple",
     category: "mobile",
+    newProduct: false,
   },
 ];
 

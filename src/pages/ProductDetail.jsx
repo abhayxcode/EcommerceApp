@@ -23,6 +23,7 @@ const ProductDetail = () => {
     <>
       <main className="mt-[68px] bg-gray-50 flex flex-col md:gap-10  items-start justify-start mx-auto w-auto md:w-full">
         {/* Info */}
+        {/* <span className=" text-md">{reviews}</span> */}
         <div className="flex md:flex-col flex-row gap-[47px] items-start justify-start max-w-[1290px] mx-auto w-full py-10">
           <div className="w-1/2 aspect-square object-cover">
             <img
