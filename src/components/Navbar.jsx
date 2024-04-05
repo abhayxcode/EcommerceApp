@@ -7,8 +7,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-import "./Navbar.css";
-import { Context } from "../../context/ContextAPI";
+import { Context } from "../context/ContextAPI";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -21,6 +20,42 @@ const Navbar = () => {
   };
   return (
     <>
+      {/* @media only screen and (max-width: 700px) {
+  nav {
+    display: flex;
+    margin: 0px;
+    padding: 10px;
+    justify-content: space-between;
+  }
+
+  .logo h2 {
+    display: none;
+    margin: 0;
+  }
+  .burger-icon {
+    display: block;
+    margin-left: 10px;
+    color: #ffffff;
+  }
+
+  input {
+    width: 150px;
+    border: 2px solid white;
+  }
+  input:hover {
+    border-color: gray;
+  }
+
+  .icons-container {
+    display: flex;
+    gap: 40px;
+    margin-right: 50px;
+  }
+  .nav-icons {
+    width: 1.2rem;
+    margin-left: 1rem;
+  }
+} */}
       <nav className="flex justify-between items-center px-28 py-3 z-[999] bg-white fixed top-0 w-full shadow-lg h-[68px] md:px-16 sm:px-8">
         <h1 className="uppercase text-[24px] text-[#265e55] font-bold tracking-[1px]">
           Gadgify.
@@ -31,7 +66,7 @@ const Navbar = () => {
           <input
             type="text"
             className="outline-0 bg-transparent w-full border-none"
-            placeholder="search"
+            placeholder="search by product name"
             onChange={(e) => handleSearchChange(e)}
           />
         </div>

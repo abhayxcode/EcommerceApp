@@ -6,9 +6,9 @@ import Products from "../components/Products/Products";
 const Shop = () => {
   return (
     <main className="mt-[68px] bg-orange-100">
-      <div className="w-full p-10 flex">
+      <div className="w-full p-10 flex ">
         <Sidebar />
-        <div className="flex flex-col w-full items-center justify-center">
+        <div className="flex flex-col w-full items-center justify-start pt-[100px] relative">
           <Recommended />
           <Products />
         </div>

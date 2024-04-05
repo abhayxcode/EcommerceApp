@@ -1,30 +1,55 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Recommended.css";
-import Buttons from "../Buttons";
-import { ImCross } from "react-icons/im";
+import { Context } from "../../context/ContextAPI";
+
+// import { ImCross } from "react-icons/im";
+
+const brands = [
+  "all",
+  "apple",
+  "dell",
+  "hp",
+  "canon",
+  "kodak",
+  "sony",
+  "realme",
+  "samsung",
+  "boat",
+];
 
 const Recommended = () => {
-  const closeSidebar = () => {
-    const recommended = document.querySelector(".recommended");
-    recommended.classList.remove("transform");
-  };
+  const { handleButtonChange } = useContext(Context);
+  const [selectedBrand, setSealectedBrand] = useState("all");
+  // const closeSidebar = () => {
+  //   const recommended = document.querySelector(".recommended");
+  //   recommended.classList.remove("transform");
+  // };
   return (
-    <div className="p-5 flex flex-col items-center w-full">
-      <button className="close-btn hidden" onClick={closeSidebar}>
+    <div className="p-5 flex flex-col items-center w-full  mb-5 absolute top-0 ">
+      {/* <button className="close-btn hidden" onClick={closeSidebar}>
         <ImCross className="close-icon" />
-      </button>
+      </button> */}
 
       <div className="flex w-full justify-around">
-        <Buttons value="" title="All" />
-        <Buttons value={"Apple"} title="Apple" />
-        <Buttons value={"Dell"} title="Dell" />
-        <Buttons value={"HP"} title="HP" />
-        <Buttons value={"Canon"} title="Canon" />
-        <Buttons value={"Kodak"} title="Kodak" />
-        <Buttons value={"Sony"} title="Sony" />
-        <Buttons value={"Realme"} title="Realme" />
-        <Buttons value={"Samsung"} title="Samsung" />
-        <Buttons value={"Boat"} title="Boat" />
+        {brands.map((item, index) => {
+          return (
+            <button
+              key={index}
+              className={`btns  capitalize font-semibold ${
+                selectedBrand === item
+                  ? "bg-[#4c4c4c] text-white"
+                  : "bg-white text-[#323232]"
+              }`}
+              value={item}
+              onClick={(e) => {
+                handleButtonChange(e);
+                setSealectedBrand(item);
+              }}
+            >
+              {item}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

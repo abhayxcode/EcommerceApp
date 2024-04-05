@@ -12,21 +12,11 @@ const Categories = () => {
           Category
         </h2>
         <div>
-          <label className="sidebar-label-container">
-            <input
-              type="radio"
-              name="category"
-              value=""
-              onChange={handleRadioChange}
-            />
-            <span className="checkmark"></span>
-            All
-          </label>
-
-          <Input value={"laptop"} name="category" title="laptop" />
-          <Input value={"camera"} name={"category"} title="camera" />
-          <Input value={"mobile"} name={"category"} title="mobile" />
-          <Input value={"headphone"} name={"category"} title="headphone" />
+          <Input value="all" name="category" title="all" />
+          <Input value={"laptop"} name="category" title="laptops" />
+          <Input value={"camera"} name={"category"} title="cameras" />
+          <Input value={"mobile"} name={"category"} title="mobiles" />
+          <Input value={"headphone"} name={"category"} title="headphones" />
         </div>
       </section>
     </>

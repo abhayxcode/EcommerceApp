@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import data from "../data/Products.js";
-import Card from "../components/ProductCard.jsx";
+import Card from "../components/Products/ProductCard.jsx";
 
 export const Context = createContext(null);
 
@@ -13,52 +13,95 @@ const getDefaultCart = () => {
 };
 
 export const ContextAPIProvider = (props) => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [query, setQuery] = useState(""); //Search bar query
+  const [selectedFilters, setSelectedFilters] = useState({
+    price: null,
+    category: null,
+    brand: null,
+  }); //radio-btns and recommendation btn
+  const [queries, setQueries] = useState([]); //Search bar query
   const [cartItems, setCartItems] = useState(getDefaultCart()); // Cart Items
 
   // ------------ Search filter Functionality ------------
   const handleSearchChange = (e) => {
-    setQuery(e.target.value);
+    setQueries(e.target.value.split(" "));
   };
 
-  const filterItems = data.filter(
-    (item) => item.title.toLowerCase().indexOf(query.toLocaleLowerCase()) !== -1
+  const filterItems = data.filter((item) =>
+    queries.every(
+      (query) =>
+        item.keywords
+          .toLowerCase()
+          .indexOf(query.trim().toLocaleLowerCase()) !== -1
+    )
   );
 
   // ------------ Radio filter Functionality -----------------
   const handleRadioChange = (e) => {
-    if (e.target.value === "All") {
-      setSelectedCategory(null);
-    }
-    setSelectedCategory(e.target.value);
+    if (e.target.name === "price")
+      if (e.target.value === "all") {
+        setSelectedFilters({ ...selectedFilters, price: e.target.value });
+      } else {
+        setSelectedFilters({
+          ...selectedFilters,
+          price: e.target.value.split(","),
+        });
+      }
+    if (e.target.name === "category")
+      setSelectedFilters({ ...selectedFilters, category: e.target.value });
   };
 
   // ------------- Buttons Filter Functionality --------------
   const handleButtonChange = (e) => {
-    setSelectedCategory(e.target.value);
+    setSelectedFilters({ ...selectedFilters, brand: e.target.value });
   };
 
-  //-------------- Filter Function ---------------
-  function filteredData(products, selected, query) {
+  //-------------- Main Filter Function ---------------
+  function filteredData(products, selected, queries) {
     let filteredProducts = products;
 
-    // filtering search Input items
-    if (query) {
+    // filtering search query
+    if (queries.length !== 0) {
       filteredProducts = filterItems;
     }
 
-    // selected filter
-    if (selected) {
+    // filtering on price
+    if (selected.price && selected.price !== "all") {
       filteredProducts = filteredProducts.filter(
-        ({ category, newPrice, company, title }) =>
-          category === selected ||
-          newPrice === selected ||
-          company === selected ||
-          title === selected
+        ({ newPrice }) =>
+          selected.price[0] <= Number(newPrice) &&
+          Number(newPrice) <= selected.price[1]
       );
     }
-    return filteredProducts.map((item) => <Card key={item.id} {...item} />);
+
+    // filtering on brand
+    if (selected.brand && selected.brand !== "all") {
+      filteredProducts = filteredProducts.filter(
+        ({ company }) => company === selected.brand
+      );
+    }
+
+    // filtering on  category
+    if (selected.category && selected.category !== "all") {
+      filteredProducts = filteredProducts.filter(
+        ({ category }) => category === selected.category
+      );
+    }
+
+    return filteredProducts.length === 0 ? (
+      <div className="w-full  font-bold  absolute h-full top-0 flex flex-col items-center justify-center">
+        <h1 className="text-[54px]  xl:text-4xl md:hidden">
+          No such products available
+        </h1>
+        <button
+          className="p-3 bg-[#214E47] hover:bg-[#4f9d91] text-white cursor-pointer mt-3"
+          onClick={() => window.location.reload()}
+        >
+          Reset All Filters
+        </button>
+      </div>
+    ) : (
+      filteredProducts.map((item) => <Card key={item.id} {...item} />)
+    );
   }
 
   // Add to cart feature
@@ -93,7 +136,7 @@ export const ContextAPIProvider = (props) => {
     setCartItems(getDefaultCart());
   };
 
-  const result = filteredData(data, selectedCategory, query);
+  const result = filteredData(data, selectedFilters, queries);
 
   const contextValue = {
     result,

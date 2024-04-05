@@ -17,7 +17,7 @@ import { MdOutlineLock } from "react-icons/md";
 import { FaArrowRotateRight } from "react-icons/fa6";
 import { IoCallOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import Card from "../components/ProductCard";
+import Card from "../components/Products/ProductCard";
 
 const brandLogos = [
   { logo: logoSony, link: "https://www.sony.com/" },

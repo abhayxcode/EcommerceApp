@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProductDetail from "../../pages/ProductDetail";
 import { BsFillBagFill } from "react-icons/bs";
 import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
@@ -6,7 +7,7 @@ import { AiFillStar } from "react-icons/ai";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 
 import { useContext } from "react";
-import { Context } from "../context/ContextAPI";
+import { Context } from "../../context/ContextAPI";
 import { Link } from "react-router-dom";
 
 const Card = ({ id, img, title, prevPrice, newPrice, newProduct }) => {
@@ -17,7 +18,7 @@ const Card = ({ id, img, title, prevPrice, newPrice, newProduct }) => {
   const cartItemCount = cartItems[id];
 
   return (
-    <div className="relative p-5 bg-white rounded-xl w-[270px] flex flex-col items-center justify-between gap-0 md:w-[220px] md:m-[10px] sm:w-[42vw]">
+    <div className="w-full min-w-[270px] max-w-[320px] relative p-5 bg-white rounded-xl flex flex-col items-center justify-between gap-0  md:m-[10px] sm:w-[42vw]">
       {newProduct && (
         <h2 className="absolute left-[5%] top-[4%] bg-red-600 px-[7px] text-sm text-white tracking-[-0.50px]">
           New
@@ -35,7 +36,7 @@ const Card = ({ id, img, title, prevPrice, newPrice, newProduct }) => {
       </div>
 
       <Link
-        to={`/productDetail`}
+        to={`/product/${id}`}
         className="p-5 rounded-lg cursor-pointer card-img flex justify-center items-center h-[200px] w-full"
       >
         <img

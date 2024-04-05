@@ -3,10 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      md: { max: "1024px" },
-      // => @media (min-width: 768px and max-width: 1023px) { ... }},
-      sm: { max: "768px" },
-      // => @media (min-width: 0px and max-width: 767px) { ... }},
+      "2xl": { max: "1440px" },
+      xl: { max: "1280px" },
+      lg: { max: "1100px" },
+      md: { max: "768px" },
+      sm: { max: "540px" },
+      // => @media (max-width: 660px) },
     },
     extend: {
       boxShadow: {
