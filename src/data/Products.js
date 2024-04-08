@@ -1,10 +1,10 @@
 const data = [
   {
     id: 1,
+    price_Id: "price_1P2Am4SGY67LfqYOtAqAJy23",
     img: "https://m.media-amazon.com/images/I/61KwCmF0bdL._AC_SL1500_.jpg",
     title: "Dell Inspiron 15 3000 Series",
     keywords: "Dell Inspiron 15 3000 Series laptops",
-    reviews: "509 reviews",
     prevPrice: "700",
     newPrice: "500",
     company: "dell",
@@ -13,6 +13,7 @@ const data = [
     stockLeft: 18,
     details:
       "The Dell Inspiron 15 3000 Series is a powerful and versatile laptop designed to meet all your computing needs. Whether you're working on documents, browsing the web, or streaming your favorite movies, this laptop delivers exceptional performance and reliability. With its sleek design and long-lasting battery life, it's the perfect companion for work or play. Plus, with its affordable price tag, it offers incredible value for money.",
+    reviewCount: "509 reviews",
     reviews: [
       {
         userName: "Emily Johnson",
@@ -31,10 +32,11 @@ const data = [
 
   {
     id: 2,
+    price_Id: "price_1P2An8SGY67LfqYOxxswgUB8",
     img: "https://m.media-amazon.com/images/I/71EWRyqzw0L._AC_SL1500_.jpg",
     title: "Canon EOS Rebel T7 DSLR",
     keywords: "Canon EOS Rebel T7 DSLR cameras",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "749",
     newPrice: "500",
     company: "canon",
@@ -60,10 +62,11 @@ const data = [
   },
   {
     id: 3,
+    price_Id: "price_1P2AncSGY67LfqYOvNOzlYtx",
     img: "https://m.media-amazon.com/images/I/81Ql+nOEynL._AC_SL1500_.jpg",
     title: "HP ROG Strix G16",
     keywords: "HP ROG Strix G16 laptops",
-    reviews: "1230 reviews",
+    reviewCount: "1230 reviews",
     prevPrice: "599",
     newPrice: "500",
     company: "hP",
@@ -89,10 +92,11 @@ const data = [
   },
   {
     id: 4,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/61KNJav3S9L._SL1500_.jpg",
     title: "boAt Airdopes 141",
     keywords: "boAt Airdopes 141 headphones earphones airdopes",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "55",
     newPrice: "50",
     company: "boat",
@@ -119,10 +123,11 @@ const data = [
 
   {
     id: 5,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/815uX7wkOZS._AC_SL1500_.jpg",
     title: "HP 14 - Intel Celeron N4020",
     keywords: "HP 14 - Intel Celeron N4020 laptops",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "399",
     newPrice: "150",
     company: "hP",
@@ -149,10 +154,11 @@ const data = [
 
   {
     id: 6,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/8195A49fZbL._SL1500_.jpg",
     title: "realme narzo 60 5G",
     keywords: "realme narzo 60 5G mobiles phones",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "399",
     newPrice: "150",
     company: "realme",
@@ -178,10 +184,11 @@ const data = [
   },
   {
     id: 7,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/716n3g3U+yL._AC_SL1500_.jpg",
     title: "HP - Intel N4120 Quad-Core",
     keywords: "HP - Intel N4120 Quad-Core laptops",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "499",
     newPrice: "150",
     company: "hp",
@@ -208,10 +215,11 @@ const data = [
 
   {
     id: 8,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/81swjZCbdiL._AC_SL1500_.jpg",
     title: "KODAK PIXPRO FZ55-BK",
     keywords: "KODAK PIXPRO FZ55-BK cameras",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "199",
     newPrice: "150",
     company: "kodak",
@@ -237,10 +245,11 @@ const data = [
   },
   {
     id: 9,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/71TPda7cwUL._AC_SL1500_.jpg",
     title: "Apple 2020 MacBook Air",
     keywords: "Apple 2020 MacBook Air laptops",
-    reviews: "990 reviews",
+    reviewCount: "990 reviews",
     prevPrice: "1029",
     newPrice: "999",
     company: "apple",
@@ -267,10 +276,11 @@ const data = [
 
   {
     id: 10,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/81C9A0E+8TL._AC_SL1500_.jpg",
     title: "Kodak FHD 1080",
     keywords: "Kodak FHD 1080 cameras",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "399",
     newPrice: "150",
     company: "kodak",
@@ -296,10 +306,11 @@ const data = [
   },
   {
     id: 11,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/61VuVU94RnL._SL1500_.jpg",
     title: "Apple iPhone 13 (128GB)",
     keywords: "Apple iPhone 13 (128GB) mobiles phones",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "1099",
     newPrice: "999",
     company: "apple",
@@ -325,10 +336,11 @@ const data = [
   },
   {
     id: 12,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/61DF0nkzgxL._AC_SL1144_.jpg",
     title: 'HP 17.3" Flagship HD+',
     keywords: 'HP 17.3" Flagship HD+ laptops',
-    reviews: "230 reviews",
+    reviewCount: "230 reviews",
     prevPrice: "899",
     newPrice: "999",
     company: "hp",
@@ -354,10 +366,11 @@ const data = [
   },
   {
     id: 13,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/71c-jiE2IcL._AC_SL1500_.jpg",
     title: "Canon FHD 1080P Kids",
     keywords: "Canon FHD 1080P Kids cameras",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "99",
     newPrice: "50",
     company: "canon",
@@ -384,10 +397,11 @@ const data = [
 
   {
     id: 14,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/410mJHS12-L._AC_SL1000_.jpg",
     title: "HP W500 Webcam - 1080P HD",
     keywords: "HP W500 Webcam - 1080P HD cameras",
-    reviews: "164 reviews",
+    reviewCount: "164 reviews",
     prevPrice: "129",
     newPrice: "50",
     company: "hp",
@@ -414,10 +428,11 @@ const data = [
 
   {
     id: 15,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/81t6Av5DvXL._SL1500_.jpg",
     title: "Samsung Galaxy M04",
     keywords: "Samsung Galaxy M04 mobiles",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "119",
     newPrice: "150",
     company: "samsung",
@@ -443,10 +458,11 @@ const data = [
   },
   {
     id: 16,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/61XK43E1nKL._AC_SL1500_.jpg",
     title: "Dell WB5023 Webcam",
     keywords: "Dell WB5023 Webcam cameras",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "299",
     newPrice: "150",
     company: "dell",
@@ -472,10 +488,11 @@ const data = [
   },
   {
     id: 17,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/71dEY4Neo3L._SL1500_.jpg",
     title: "Realme narzo N53",
     keywords: "Realme narzo N53 mobiles",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "149",
     newPrice: "50",
     company: "realme",
@@ -502,10 +519,11 @@ const data = [
 
   {
     id: 18,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/71G3TjxFpZL._AC_SL1500_.jpg",
     title: "Sony 4K Digital Cam",
     keywords: "Sony 4K Digital Cameras",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "249",
     newPrice: "150",
     company: "sony",
@@ -531,10 +549,11 @@ const data = [
   },
   {
     id: 19,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/81LKz2gs0SL._AC_SL1500_.jpg",
     title: 'HP 15.6" Touchscreen',
     keywords: 'HP 15.6" Touchscreen laptops',
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "799",
     newPrice: "500",
     company: "hp",
@@ -560,10 +579,11 @@ const data = [
   },
   {
     id: 20,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/61upJ6FlFLL._AC_SL1500_.jpg",
     title: "2022 Apple MacBook Air",
     keywords: "2022 Apple MacBook Air laptops",
-    reviews: "599 reviews",
+    reviewCount: "599 reviews",
     prevPrice: "1059",
     newPrice: "999",
     company: "apple",
@@ -590,10 +610,11 @@ const data = [
 
   {
     id: 21,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/71c211GncKL._AC_SL1500_.jpg",
     title: "KODAK PIXPRO WPZ2",
     keywords: "KODAK PIXPRO WPZ2 laptops",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "399",
     newPrice: "150",
     company: "kodak",
@@ -604,25 +625,26 @@ const data = [
       "The KODAK PIXPRO WPZ2 is a rugged and durable camera that's perfect for capturing your adventures. With its waterproof and shockproof design, it can withstand the elements and keep up with your active lifestyle. Plus, its high-resolution sensor and wide-angle lens ensure that you capture every moment in stunning detail. Whether you're snorkeling, skiing, or hiking, the KODAK PIXPRO WPZ2 is the perfect companion for your outdoor adventures.",
     reviews: [
       {
-        userName: "Emily Johnson",
-        date: "March 12, 2023",
+        userName: "Liam Thompson",
+        date: "October 5, 2021",
         review:
-          "I recently purchased the Dell Inspiron 15 3000 Series, and I'm thoroughly impressed. Its sleek design, powerful performance, and long-lasting battery make it perfect for both work and entertainment. Highly recommended!",
+          "The KODAK PIXPRO WPZ2 is a rugged and durable camera that's perfect for outdoor adventures. Its waterproof and shockproof design can withstand the elements, making it ideal for camping, hiking, and water sports. The image quality is impressive, and the built-in Wi-Fi connectivity allows for easy sharing of photos and videos.",
       },
       {
-        userName: "Michael Smith",
-        date: "April 28, 2023",
+        userName: "Charlotte White",
+        date: "September 18, 2021",
         review:
-          "The Dell Inspiron 15 3000 Series exceeded my expectations. Its fast processor, ample storage, and vibrant display make it a great choice for everyday use. Whether you're a student or a professional, this laptop won't disappoint.",
+          "I love my KODAK PIXPRO WPZ2! It's compact, easy to use, and takes amazing photos. Whether I'm snorkeling in the ocean or exploring scenic landscapes, it captures every moment with clarity and detail. The underwater mode is a fun feature that allows me to capture unique shots.",
       },
     ],
   },
   {
     id: 22,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/61HHS0HrjpL._SL1500_.jpg",
     title: "Apple iPhone 14 Pro",
     keywords: "Apple iPhone 14 Pro mobile phones",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "1899",
     newPrice: "1500",
     company: "apple",
@@ -633,26 +655,27 @@ const data = [
       "The Apple iPhone 14 Pro is a premium smartphone that offers cutting-edge technology and innovative features. With its powerful processor, stunning display, and advanced camera system, it's perfect for capturing stunning photos and videos, playing games, and staying connected on the go. Plus, with its sleek design and intuitive user interface, it's a pleasure to use every day. Whether you're a professional photographer, content creator, or everyday user, the iPhone 14 Pro has something for everyone.",
     reviews: [
       {
-        userName: "Emily Johnson",
-        date: "March 12, 2023",
+        userName: "Mason Martinez",
+        date: "August 2, 2021",
         review:
-          "I recently purchased the Dell Inspiron 15 3000 Series, and I'm thoroughly impressed. Its sleek design, powerful performance, and long-lasting battery make it perfect for both work and entertainment. Highly recommended!",
+          "The Apple iPhone 14 Pro is a premium smartphone with cutting-edge features and performance. Its stunning Super Retina XDR display, powerful A16 chip, and advanced camera system set a new standard for mobile devices. Whether I'm taking photos, playing games, or streaming videos, it delivers an unparalleled experience.",
       },
       {
-        userName: "Michael Smith",
-        date: "April 28, 2023",
+        userName: "Amelia Turner",
+        date: "July 20, 2021",
         review:
-          "The Dell Inspiron 15 3000 Series exceeded my expectations. Its fast processor, ample storage, and vibrant display make it a great choice for everyday use. Whether you're a student or a professional, this laptop won't disappoint.",
+          "I upgraded to the Apple iPhone 14 Pro, and I'm blown away by its capabilities. The camera quality is exceptional, capturing detailed photos and videos in any lighting condition. The 5G connectivity ensures fast and reliable internet speeds, and the battery life lasts me all day.",
       },
     ],
   },
 
   {
     id: 23,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/61RZDb2mQxL._SL1500_.jpg",
     title: "Samsung Galaxy S23 5G",
     keywords: "Samsung Galaxy S23 5G mobile phones",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "1199",
     newPrice: "999",
     company: "samsung",
@@ -663,25 +686,26 @@ const data = [
       "The Samsung Galaxy S23 5G is a powerful and versatile smartphone that's perfect for work and play. With its fast processor, vibrant display, and long-lasting battery life, it can handle all your everyday tasks with ease. Plus, with its sleek design and intuitive user interface, it's a pleasure to use every day. Whether you're working on documents, browsing the web, or streaming your favorite movies, the Galaxy S23 5G has something for everyone.",
     reviews: [
       {
-        userName: "Emily Johnson",
-        date: "March 12, 2023",
+        userName: "Logan Walker",
+        date: "June 10, 2021",
         review:
-          "I recently purchased the Dell Inspiron 15 3000 Series, and I'm thoroughly impressed. Its sleek design, powerful performance, and long-lasting battery make it perfect for both work and entertainment. Highly recommended!",
+          "The Samsung Galaxy S23 5G is a feature-packed smartphone that offers exceptional performance and value. Its vibrant AMOLED display, powerful processor, and 5G connectivity make it perfect for multitasking, gaming, and streaming. The camera takes stunning photos, and the battery life lasts me through a full day of use.",
       },
       {
-        userName: "Michael Smith",
-        date: "April 28, 2023",
+        userName: "Grace Hill",
+        date: "May 28, 2021",
         review:
-          "The Dell Inspiron 15 3000 Series exceeded my expectations. Its fast processor, ample storage, and vibrant display make it a great choice for everyday use. Whether you're a student or a professional, this laptop won't disappoint.",
+          "I recently switched to the Samsung Galaxy S23 5G, and I couldn't be happier. The interface is intuitive, and the performance is smooth and responsive. The camera captures vibrant and detailed photos, and the battery life is impressive. It's a great smartphone for both work and play.",
       },
     ],
   },
   {
     id: 24,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/418AP8pw3KL._SL1500_.jpg",
     title: "Apple EarPods with Lightning",
     keywords: "Apple EarPods with Lightning headphones earphones earpods",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "59",
     newPrice: "50",
     company: "apple",
@@ -692,25 +716,26 @@ const data = [
       "The Apple EarPods with Lightning are stylish and comfortable headphones that deliver exceptional sound quality and clarity. With their ergonomic design and secure fit, they're perfect for listening to music, watching videos, or taking calls on the go. Plus, with their Lightning connector, they're compatible with a wide range of Apple devices, including iPhones, iPads, and iPods. Whether you're commuting to work, working out at the gym, or relaxing at home, the Apple EarPods with Lightning are the perfect companion for your audio needs.",
     reviews: [
       {
-        userName: "Emily Johnson",
-        date: "March 12, 2023",
+        userName: "Christopher Wright",
+        date: "April 15, 2021",
         review:
-          "I recently purchased the Dell Inspiron 15 3000 Series, and I'm thoroughly impressed. Its sleek design, powerful performance, and long-lasting battery make it perfect for both work and entertainment. Highly recommended!",
+          "The Apple EarPods with Lightning are a must-have accessory for any iPhone user. They deliver crisp and clear audio, and the ergonomic design ensures a comfortable fit. Whether I'm listening to music, watching videos, or taking calls, the sound quality is excellent.",
       },
       {
-        userName: "Michael Smith",
-        date: "April 28, 2023",
+        userName: "Evelyn Green",
+        date: "March 30, 2021",
         review:
-          "The Dell Inspiron 15 3000 Series exceeded my expectations. Its fast processor, ample storage, and vibrant display make it a great choice for everyday use. Whether you're a student or a professional, this laptop won't disappoint.",
+          "I love my Apple EarPods with Lightning! The sound quality is top-notch, and the in-line controls make it easy to adjust volume and playback. They're lightweight and comfortable to wear for extended periods, and the built-in microphone delivers clear voice quality during calls.",
       },
     ],
   },
   {
     id: 25,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/515jdxLlmaL._SL1500_.jpg",
     title: "boAt Rockerz",
     keywords: "boAt Rockerz headphones earphones",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "24",
     newPrice: "50",
     company: "boat",
@@ -721,26 +746,27 @@ const data = [
       "The boAt Rockerz are stylish and affordable headphones that deliver impressive sound quality and comfort. With their sleek design and ergonomic earbuds, they're perfect for listening to music, taking calls, or working out. Plus, with their long battery life and quick charging feature, you can enjoy hours of uninterrupted use on the go. Whether you're at home, in the office, or on the move, the boAt Rockerz are the perfect companion for your audio needs.",
     reviews: [
       {
-        userName: "Emily Johnson",
-        date: "March 12, 2023",
+        userName: "Jackson Carter",
+        date: "February 12, 2021",
         review:
-          "I recently purchased the Dell Inspiron 15 3000 Series, and I'm thoroughly impressed. Its sleek design, powerful performance, and long-lasting battery make it perfect for both work and entertainment. Highly recommended!",
+          "The boAt Rockerz headphones are amazing! They offer great sound quality, comfortable fit, and long battery life. Whether I'm listening to music at home or on the go, they deliver immersive audio and block out external noise. The Bluetooth connectivity is reliable, and the foldable design makes them easy to carry.",
       },
       {
-        userName: "Michael Smith",
-        date: "April 28, 2023",
+        userName: "Victoria Adams",
+        date: "January 25, 2021",
         review:
-          "The Dell Inspiron 15 3000 Series exceeded my expectations. Its fast processor, ample storage, and vibrant display make it a great choice for everyday use. Whether you're a student or a professional, this laptop won't disappoint.",
+          "I've been using the boAt Rockerz headphones for workouts and daily commutes, and they've exceeded my expectations. The sound is clear and punchy, and the ear cups provide a snug fit without causing discomfort. The battery life is impressive, lasting me through multiple workouts without needing a recharge.",
       },
     ],
   },
 
   {
     id: 26,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/51xxA+6E+xL._SL1500_.jpg",
     title: "boAt Rockerz 450",
     keywords: "boAt Rockerz 450 headphones earphones",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "22",
     newPrice: "50",
     company: "boat",
@@ -751,25 +777,26 @@ const data = [
       "The boAt Rockerz 450 are sleek and stylish headphones that deliver powerful sound and deep bass. With their ergonomic design and comfortable ear cups, they're perfect for long listening sessions and immersive gaming experiences. Plus, with their built-in microphone and remote control, you can easily take calls and control your music playback without touching your device. Whether you're commuting to work, working out at the gym, or relaxing at home, the boAt Rockerz 450 are the perfect companion for your audio needs.",
     reviews: [
       {
-        userName: "Emily Johnson",
-        date: "March 12, 2023",
+        userName: "William Martinez",
+        date: "December 10, 2020",
         review:
-          "I recently purchased the Dell Inspiron 15 3000 Series, and I'm thoroughly impressed. Its sleek design, powerful performance, and long-lasting battery make it perfect for both work and entertainment. Highly recommended!",
+          "The boAt Rockerz 450 headphones are fantastic! They offer great sound quality, comfortable padding, and excellent battery life. Whether I'm listening to music, watching movies, or taking calls, they deliver immersive audio and clear voice quality. The Bluetooth range is impressive, allowing me to move around freely without losing connection.",
       },
       {
-        userName: "Michael Smith",
-        date: "April 28, 2023",
+        userName: "Sophia Scott",
+        date: "November 28, 2020",
         review:
-          "The Dell Inspiron 15 3000 Series exceeded my expectations. Its fast processor, ample storage, and vibrant display make it a great choice for everyday use. Whether you're a student or a professional, this laptop won't disappoint.",
+          "I've been using the boAt Rockerz 450 headphones for several months now, and they've become my go-to choice for audio. The sound signature is well-balanced, with crisp highs and deep bass. The build quality is sturdy, and the foldable design makes them easy to carry in my bag.",
       },
     ],
   },
   {
     id: 27,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/81-fFXQdPTL._SL1500_.jpg",
     title: "Samsung Galaxy M13",
     keywords: "Samsung Galaxy M13 mobiles phones",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "199",
     newPrice: "150",
     company: "samsung",
@@ -780,25 +807,26 @@ const data = [
       "The Samsung Galaxy M13 is a budget-friendly smartphone that offers impressive performance and features. With its powerful processor, vibrant display, and long-lasting battery life, it's perfect for multitasking and entertainment on the go. Plus, with its sleek design and intuitive user interface, it's a pleasure to use every day. Whether you're streaming videos, playing games, or staying connected with friends and family, the Galaxy M13 has something for everyone.",
     reviews: [
       {
-        userName: "Emily Johnson",
-        date: "March 12, 2023",
+        userName: "James Johnson",
+        date: "October 15, 2020",
         review:
-          "I recently purchased the Dell Inspiron 15 3000 Series, and I'm thoroughly impressed. Its sleek design, powerful performance, and long-lasting battery make it perfect for both work and entertainment. Highly recommended!",
+          "The Samsung Galaxy M13 is a great budget smartphone with impressive features. Its vibrant display, responsive performance, and long battery life make it perfect for everyday use. The camera takes decent photos, and the user interface is intuitive and easy to navigate.",
       },
       {
-        userName: "Michael Smith",
-        date: "April 28, 2023",
+        userName: "Emily Rodriguez",
+        date: "September 30, 2020",
         review:
-          "The Dell Inspiron 15 3000 Series exceeded my expectations. Its fast processor, ample storage, and vibrant display make it a great choice for everyday use. Whether you're a student or a professional, this laptop won't disappoint.",
+          "I purchased the Samsung Galaxy M13 for my teenage daughter, and she loves it. The sleek design and compact size make it easy to carry around, and the performance is smooth for gaming and social media apps. It's a reliable smartphone at an affordable price.",
       },
     ],
   },
   {
     id: 28,
+    price_Id: "",
     img: "https://m.media-amazon.com/images/I/71QE00iB9IL._SL1500_.jpg",
     title: "Apple iPhone 11 (64GB)",
     keywords: "Apple iPhone 11 (64GB) mobiles phones",
-    reviews: "123 reviews",
+    reviewCount: "123 reviews",
     prevPrice: "659",
     newPrice: "500",
     company: "apple",
@@ -809,16 +837,16 @@ const data = [
       "The Apple iPhone 11 (64GB) is a powerful and versatile smartphone that's perfect for work and play. With its fast processor, vibrant display, and long-lasting battery life, it can handle all your everyday tasks with ease. Plus, with its sleek design and intuitive user interface, it's a pleasure to use every day. Whether you're streaming videos, playing games, or staying connected with friends and family, the iPhone 11 (64GB) has something for everyone.",
     reviews: [
       {
-        userName: "Emily Johnson",
-        date: "March 12, 2023",
+        userName: "Michael Thompson",
+        date: "August 12, 2020",
         review:
-          "I recently purchased the Dell Inspiron 15 3000 Series, and I'm thoroughly impressed. Its sleek design, powerful performance, and long-lasting battery make it perfect for both work and entertainment. Highly recommended!",
+          "The Apple iPhone 11 (64GB) is a solid smartphone with excellent performance and features. Its powerful A13 Bionic chip, stunning display, and versatile camera system make it a great choice for users of all ages. The battery life is impressive, lasting me through a full day of use.",
       },
       {
-        userName: "Michael Smith",
-        date: "April 28, 2023",
+        userName: "Madison Martinez",
+        date: "July 25, 2020",
         review:
-          "The Dell Inspiron 15 3000 Series exceeded my expectations. Its fast processor, ample storage, and vibrant display make it a great choice for everyday use. Whether you're a student or a professional, this laptop won't disappoint.",
+          "I've been using the Apple iPhone 11 (64GB) for over a year now, and it's been flawless. The camera quality is outstanding, and the Night mode feature captures stunning low-light photos. The iOS ecosystem offers a seamless experience, and the device feels premium in hand.",
       },
     ],
   },

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { FaHeart, FaRegStarHalfStroke } from "react-icons/fa6";
 import { MdFavorite } from "react-icons/md";
@@ -7,22 +7,26 @@ import { FiPlusCircle, FiMinusCircle } from "react-icons/fi";
 import Review from "../components/Review/Review";
 import ReviewForm from "../components/Review/ReviewForm";
 import { useParams } from "react-router-dom";
+import SpecialProduct from "../components/Products/SpecialProduct";
+import { Context } from "../context/ContextAPI";
 
 const ProductDetail = ({ productList }) => {
-  const { id } = useParams();
+  let { id } = useParams();
+  id = Number(id);
+
+  const { removeFromCart, getProductCount, addToCart, updateCartItemCount } =
+    useContext(Context);
 
   const {
     img,
     title,
-    keywords,
-    reviews,
+    reviewCount,
     prevPrice,
     newPrice,
-    company,
     category,
-    newProduct,
     stockLeft,
     details,
+    reviews,
   } = productList.find((product) => product.id === Number(id));
 
   const [reviewState, setReviewState] = useState(false);
@@ -31,8 +35,6 @@ const ProductDetail = ({ productList }) => {
   return (
     <>
       <main className="mt-[68px] bg-gray-50 flex flex-col md:gap-10  items-start justify-start mx-auto w-auto md:w-full">
-        {/* Info */}
-        {/* <span className=" text-md">{reviews}</span> */}
         <div className="flex md:flex-col flex-row gap-[47px] items-start justify-start max-w-[1290px] mx-auto w-full py-10">
           <div className="w-1/2 aspect-square object-cover">
             <img
@@ -56,7 +58,7 @@ const ProductDetail = ({ productList }) => {
                   <AiFillStar className="text-[#FF9533]" />
                 </div>
                 <h2 className="text-gray-500 text-sm tracking-[-0.50px] w-auto">
-                  {reviews}
+                  {reviewCount}
                 </h2>
               </div>
               <h2 className="text-4xl sm:text-[32px] md:text-[34px] text-sky-900 font-bold tracking-[-0.50px] w-full">
@@ -83,16 +85,43 @@ const ProductDetail = ({ productList }) => {
                 {details}
               </p>
             </div>
-
+            {/* Add to cart and item count */}
             <div className="flex gap-[20px] items-center justify-start">
-              <div className="border border-black border-solid flex gap-[15px] items-center justify-center p-2">
-                <FiMinusCircle className="cursor-pointer h-6 w-6 text-gray-400" />
-                <h2 className="text-black text-lg tracking-[-0.50px]">1</h2>
-                <FiPlusCircle className="cursor-pointer h-6 w-6" />
+              <div className="w-fit count-handler border border-black border-solid flex gap-[15px] items-center justify-center p-2">
+                <FiMinusCircle
+                  className={` h-6 w-6 ${
+                    getProductCount(id) == 0
+                      ? "text-gray-400"
+                      : "cursor-pointer"
+                  }`}
+                  onClick={() => {
+                    getProductCount(id) == 0 ? "" : removeFromCart(id);
+                  }}
+                />
+                <input
+                  value={getProductCount(id)}
+                  className="max-w-[50px]  text-center font-bold  bg-transparent  text-black text-lg tracking-[-0.50px]"
+                  onChange={(e) => {
+                    let num = 0;
+                    if (e.target.value == "" || isNaN(e.target.value)) {
+                      num = 0;
+                    } else {
+                      num = Number(e.target.value);
+                    }
+                    updateCartItemCount(num, id);
+                  }}
+                />
+                <FiPlusCircle
+                  className="cursor-pointer h-6 w-6"
+                  onClick={() => addToCart(id)}
+                />
               </div>
-              <h2 className="hover:bg-[#4f9d91] cursor-pointer bg-[#214e47] justify-center sm:p-5  py-2 px-5 text-lg text-white tracking-[-0.50px] w-auto">
+              <div
+                onClick={() => addToCart(id)}
+                className="hover:bg-[#4f9d91] cursor-pointer bg-[#214e47] justify-center sm:p-5  py-2 px-5 text-lg text-white tracking-[-0.50px] w-auto"
+              >
                 Add to Cart
-              </h2>
+              </div>
               <div
                 className="cursor-pointer p-2 hover:bg-gray-200 h-full"
                 onClick={() => setWishlisted(!wishlisted)}
@@ -108,7 +137,7 @@ const ProductDetail = ({ productList }) => {
         </div>
 
         {/* Detail and Reviews */}
-        <div className="flex md:flex-col gap-[50px] items-start justify-center max-w-[1290px] mx-auto w-full pb-20 min-h-[500px]">
+        <div className="flex md:flex-col gap-[50px] items-start justify-center max-w-[1290px] mx-auto w-full pb-20 min-h-[480px]">
           <div className="flex flex-col gap-[42px] items-start justify-start w-full">
             {/* Header */}
             <div className="flex gap-[50px] justify-start w-full">
@@ -140,8 +169,13 @@ const ProductDetail = ({ productList }) => {
 
             {reviewState ? (
               <div className="flex flex-col gap-10">
-                <Review />
-                <Review />
+                {reviews.map((review, index) => (
+                  <Review
+                    review={review}
+                    key={index}
+                    randomColor={index ? "red" : "blue"}
+                  />
+                ))}
               </div>
             ) : (
               <h2 className="leading-[35.00px] text-base text-gray-500 tracking-[-0.50px]">
@@ -150,28 +184,7 @@ const ProductDetail = ({ productList }) => {
             )}
           </div>
 
-          <div className="flex justify-center items-center w-full p-6 bg-gradient-to-r from-[#27383C] to-[#274951]">
-            <div className="flex flex-col items-start gap-6 w-full text-white">
-              <h2 className="text-lg tracking-[-0.50px] w-full">Living Room</h2>
-              <h2 className="md:max-w-full max-w-xs text-4xl md:text-[34px] font-bold  tracking-[-0.50px] mt-3">
-                The best foam padded chair
-              </h2>
-
-              <button
-                className="common-pointer border-2 border-gray-50 border-solid cursor-pointer font-medium leading-[normal] min-w-[155px] py-[15px] text-base text-center text-gray-50 tracking-[-0.50px]"
-                // onClick={() => navigate("/shop")}
-              >
-                Shop Now
-              </button>
-            </div>
-            <div className="">
-              <img
-                className="h-[300px] md:h-auto max-h-[300px] object-cover"
-                src="/src/assets/laptop.jpg"
-                alt="sammoghadamkh"
-              />
-            </div>
-          </div>
+          <SpecialProduct />
         </div>
 
         {/* Review Form */}

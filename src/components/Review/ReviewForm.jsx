@@ -1,7 +1,14 @@
+import { useRef } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 
 const ReviewForm = () => {
+  const reviewForm = useRef();
+
+  const submitReview = (e) => {
+    e.preventDefault();
+    reviewForm.current.reset();
+  };
   return (
     <div className="flex flex-col font-raleway gap-6 items-center justify-start w-full border border-solid border-gray-300 p-8">
       <h2
@@ -10,7 +17,10 @@ const ReviewForm = () => {
       >
         Write your review
       </h2>
-      <div className="flex flex-col gap-8 items-start justify-start w-full md:w-full">
+      <form
+        ref={reviewForm}
+        className="flex flex-col gap-8 items-start justify-start w-full md:w-full"
+      >
         <div className="flex gap-[31px] items-start justify-start w-full">
           <div className="flex flex-col md:flex-col gap-5 items-start justify-start w-full">
             {/* Name */}
@@ -64,10 +74,14 @@ const ReviewForm = () => {
             />
           </div>
         </div>
-        <button className="bg-[#214E47]  cursor-pointer font-medium leading-[normal] min-w-[155px] py-[12px] text-base text-center text-white tracking-[-0.50px] hover:bg-[#4f9d91]">
+        <button
+          type="submit"
+          onClick={(e) => submitReview(e)}
+          className="bg-[#214E47]  cursor-pointer font-medium leading-[normal] min-w-[155px] py-[12px] text-base text-center text-white tracking-[-0.50px] hover:bg-[#4f9d91]"
+        >
           Submit
         </button>
-      </div>
+      </form>
     </div>
   );
 };

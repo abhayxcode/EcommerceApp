@@ -8,45 +8,88 @@ const Cart = () => {
   const { cartItems, getTotalCartAmount, checkout } = useContext(Context);
 
   const totalAmount = getTotalCartAmount();
-
   const navigate = useNavigate();
 
+  // const checkoutStripe = async () => {
+  //   await fetch("http://localhost:4000/checkout", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ items: data }),
+  //   })
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((response) => {
+  //       if (response.url) {
+  //         window.location.assign(response.url);
+  //       }
+  //     });
+  // };
+
   return (
-    <main className="cart mt-[68px] flex justify-center gap-[100px] items-start p-[50px]">
-      {totalAmount > 0 ? (
-        <div className="cart-items mt-15">
-          {data.map((product) => {
-            if (cartItems[product.id] !== 0) {
-              return <CartItem key={product.id} {...product} />;
-            }
-          })}
+    <main className="min-h-[95vh] mt-[68px] flex flex-col justify-start items-center p-20 pt-10">
+      <h1 className="uppercase text-4xl font-bold mb-10">
+        {totalAmount > 0 ? "Your Cart" : "Your Shopping Cart is Empty"}
+      </h1>
+      <div className="flex justify-evenly gap-10 w-full p-5 px-10">
+        {totalAmount > 0 ? (
+          <div className="w-[50%] flex flex-col gap-5">
+            {cartItems.map((item) => {
+              return item.count > 0 ? (
+                <CartItem key={item.id} {...data[item.id - 1]} />
+              ) : (
+                ""
+              );
+            })}
+          </div>
+        ) : (
+          " "
+        )}
+        <div className="w-[30%] ">
+          {totalAmount > 0 ? (
+            <>
+              <div className="flex justify-between text-3xl">
+                <p> Subtotal : </p> <span>${totalAmount}</span>
+              </div>
+              <div className="flex text-2xl justify-between text-gray-500">
+                <p> Discount (10% off) : </p>{" "}
+                <span>- ${Math.floor(totalAmount * 0.1)}</span>
+              </div>
+              <hr className="my-4" />
+              <div className="flex justify-between text-4xl">
+                <p> Total : </p>{" "}
+                <span>${totalAmount - Math.floor(totalAmount * 0.1)}.00</span>
+              </div>
+            </>
+          ) : (
+            ""
+          )}
+
+          <div className="flex mt-4 justify-center">
+            {totalAmount > 0 ? (
+              <button
+                className="font-semibold hover:bg-[#444444] hover:text-white cursor-pointer w-[180px] h-[50px] uppercase bg-[rgb(19,19,19)] text-white border-none m-3 p-1 rounded-lg text-[12px] tracking-wide"
+                onClick={() => {
+                  // checkoutStripe();
+                  checkout();
+                }}
+              >
+                Checkout
+              </button>
+            ) : (
+              ""
+            )}
+            <button
+              className="font-semibold hover:bg-[#444444] hover:text-white cursor-pointer w-[180px] h-[50px] uppercase bg-[rgb(19,19,19)] text-white border-none m-3 p-1 rounded-lg text-[12px] tracking-wide"
+              onClick={() => navigate("/shop")}
+            >
+              Continue Shopping
+            </button>
+          </div>
         </div>
-      ) : (
-        " "
-      )}
-      {totalAmount > 0 ? (
-        <div className="checkout text-[2.5rem] text-center ">
-          <p> Subtotal: ${totalAmount} </p>
-          <button
-            className="hover:bg-[#444444] hover:text-white cursor-pointer w-[180px] h-[50px] uppercase bg-[rgb(19,19,19)] text-white border-none m-3 p-1 rounded-lg text-[12px] tracking-wide"
-            onClick={() => {
-              checkout();
-              navigate("/");
-            }}
-          >
-            Checkout
-          </button>
-          <button
-            className="hover:bg-[#444444] hover:text-white cursor-pointer w-[180px] h-[50px] uppercase bg-[rgb(19,19,19)] text-white border-none m-3 p-1 rounded-lg text-[12px] tracking-wide"
-            onClick={() => navigate("/")}
-          >
-            {" "}
-            Continue Shopping{" "}
-          </button>
-        </div>
-      ) : (
-        <h1 className="uppercase"> Your Shopping Cart is Empty</h1>
-      )}
+      </div>
     </main>
   );
 };

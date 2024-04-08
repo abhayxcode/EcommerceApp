@@ -11,11 +11,8 @@ import { Context } from "../../context/ContextAPI";
 import { Link } from "react-router-dom";
 
 const Card = ({ id, img, title, prevPrice, newPrice, newProduct }) => {
-  const { addToCart, cartItems } = useContext(Context);
-
+  const { addToCart, getProductCount } = useContext(Context);
   const [wishlisted, setWishlisted] = useState(false);
-
-  const cartItemCount = cartItems[id];
 
   return (
     <div className="w-full min-w-[270px] max-w-[320px] relative p-5 bg-white rounded-xl flex flex-col items-center justify-between gap-0  md:m-[10px] sm:w-[42vw]">
@@ -65,11 +62,13 @@ const Card = ({ id, img, title, prevPrice, newPrice, newProduct }) => {
 
         <div
           className="cursor-pointer w-full px-5 py-2 mt-3 bg-[#214E47] hover:bg-[#4f9d91] text-white flex items-center justify-center gap-2"
-          onClick={() => addToCart(id)}
+          onClick={() => {
+            addToCart(id);
+          }}
         >
           <p>Add to Cart</p>
 
-          <p>{cartItemCount > 0 && <> ({cartItemCount})</>}</p>
+          <p>{getProductCount(id) > 0 && <> ({getProductCount(id)})</>}</p>
         </div>
       </div>
     </div>

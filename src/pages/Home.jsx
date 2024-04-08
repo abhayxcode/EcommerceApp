@@ -18,6 +18,7 @@ import { FaArrowRotateRight } from "react-icons/fa6";
 import { IoCallOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Card from "../components/Products/ProductCard";
+import SpecialProduct from "../components/Products/SpecialProduct";
 
 const brandLogos = [
   { logo: logoSony, link: "https://www.sony.com/" },
@@ -51,8 +52,8 @@ const specialProducts = [
   },
   {
     img: specialProduct2,
-    title: "boat airdopes",
-    text: "True wireless earbuds",
+    title: "Boat Airdopes",
+    text: "True wireless Earbuds",
   },
 ];
 
@@ -134,28 +135,29 @@ const Home = () => {
       <section className="flex items-center justify-center md:px-10 p-[75px]  w-full bg-orange-50">
         <div className="grid gap-20 md:grid-cols-1 grid-cols-2 justify-center max-w-[1290px] mx-auto w-full">
           {specialProducts.map(({ img, title, text }, index) => (
-            <div className="flex justify-center items-center p-6 bg-gradient-to-r from-[#27383C] to-[#274951]">
-              <div className="flex flex-col items-start gap-6 w-[55%] text-white">
-                <h2 className="text-lg tracking-[-0.50px] w-full">{title}</h2>
-                <h2 className="md:max-w-full max-w-xs text-4xl md:text-[34px] font-bold  tracking-[-0.50px] mt-3">
-                  {text}
-                </h2>
+            // <div key={index} className="flex justify-center items-center p-6 bg-gradient-to-r from-[#27383C] to-[#274951]">
+            //   <div className="flex flex-col items-start gap-6 w-[55%] text-white">
+            //     <h2 className="text-lg tracking-[-0.50px] w-full">{title}</h2>
+            //     <h2 className="md:max-w-full max-w-xs text-4xl md:text-[34px] font-bold  tracking-[-0.50px] mt-3">
+            //       {text}
+            //     </h2>
 
-                <Link
-                  className="common-pointer border-2 border-gray-50 border-solid cursor-pointer font-medium leading-[normal] min-w-[155px] py-[15px] text-base text-center text-gray-50 tracking-[-0.50px]"
-                  to="/shop"
-                >
-                  Shop Now
-                </Link>
-              </div>
-              <div className="w-[45%] ">
-                <img
-                  className="h-full md:h-auto max-h-[200px] object-cover mx-auto"
-                  src={img}
-                  alt="sammoghadamkh"
-                />
-              </div>
-            </div>
+            //     <Link
+            //       className="common-pointer border-2 border-gray-50 border-solid cursor-pointer font-medium leading-[normal] min-w-[155px] py-[15px] text-base text-center text-gray-50 tracking-[-0.50px]"
+            //       to="/shop"
+            //     >
+            //       Shop Now
+            //     </Link>
+            //   </div>
+            //   <div className="w-[45%] ">
+            //     <img
+            //       className="h-full md:h-auto max-h-[200px] object-cover mx-auto"
+            //       src={img}
+            //       alt="sammoghadamkh"
+            //     />
+            //   </div>
+            // </div>
+            <SpecialProduct key={index} img={img} title={title} text={text} />
           ))}
         </div>
       </section>

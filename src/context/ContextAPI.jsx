@@ -4,22 +4,31 @@ import Card from "../components/Products/ProductCard.jsx";
 
 export const Context = createContext(null);
 
+// const getDefaultCart = () => {
+//   let cart = {};
+//   for (let i = 1; i < data.length + 1; i++) {
+//     cart[i] = 0;
+//   }
+//   return cart;
+// };
 const getDefaultCart = () => {
-  let cart = {};
-  for (let i = 1; i < data.length + 1; i++) {
-    cart[i] = 0;
+  let cart = [];
+  for (let i = 0; i < data.length; i++) {
+    cart[i] = { id: i + 1, count: 0 };
   }
   return cart;
 };
 
-export const ContextAPIProvider = (props) => {
+export const ContextAPIProvider = ({ children }) => {
   const [selectedFilters, setSelectedFilters] = useState({
     price: null,
     category: null,
     brand: null,
   }); //radio-btns and recommendation btn
   const [queries, setQueries] = useState([]); //Search bar query
-  const [cartItems, setCartItems] = useState(getDefaultCart()); // Cart Items
+
+  // const [cartItems, setCartItems] = useState(getDefaultCart()); // Cart Items Count by id
+  const [cartItems, setCartItems] = useState(getDefaultCart());
 
   // ------------ Search filter Functionality ------------
   const handleSearchChange = (e) => {
@@ -104,36 +113,97 @@ export const ContextAPIProvider = (props) => {
     );
   }
 
-  // Add to cart feature
-  const addToCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+  // Add one to cartItem count
+  // const addToCart = (itemId) => {
+  //   setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+  // }
+
+  //Remove one from cartItem count
+  // const removeFromCart = (itemId) => {
+  // setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+  // }
+
+  // update cartitems count at once through input
+  //  const updateCartItemCount = (newAmount, itemId) => {
+  // setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
+  // };
+
+  // total price of cart
+  //  const getTotalCartAmount = () => {
+  //   let totalAmount = 0;
+  //   for (const item in cartItems) {
+  //     if (cartItems[item] > 0) {
+  //       let itemInfo = data.find((product) => product.id === Number(item));
+  //       totalAmount += cartItems[item] * itemInfo.newPrice;
+  //     }
+  //   }
+  //   return totalAmount;
+  // };
+
+  //checkout
+  // const checkout = () => {
+  //   setCartItems(getDefaultCart());
+  // };
+
+  // Find the quantity of individual item
+
+  const getProductCount = (id) => {
+    const count = cartItems.find((item) => item.id === id)?.count;
+    // if (count === undefined) return 0;
+    return count;
+  };
+  // Add one to cartItem count
+  const addToCart = (id) => {
+    console.log(getProductCount(id));
+    setCartItems(
+      cartItems.map((item) =>
+        item.id === id ? { ...item, count: item.count + 1 } : item
+      )
+    );
   };
 
-  //Remove from cart feature
-  const removeFromCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+  //Remove one from cartItem count
+  const removeFromCart = (id) => {
+    setCartItems(
+      cartItems.map((item) =>
+        item.id === id ? { ...item, count: item.count - 1 } : item
+      )
+    );
   };
 
-  // update cart items count
-  const updateCartItemCount = (newAmount, itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
+  // update cartitems count at once through input
+  const updateCartItemCount = (newCount, id) => {
+    setCartItems(
+      cartItems.map((item) => {
+        return item.id === id ? { ...item, count: newCount } : item;
+      })
+    );
   };
 
-  // total price of cart items
+  // delete whole item from the cart at once
+  const deleteFromCart = (id) => {
+    setCartItems((cartItems) =>
+      cartItems.map((item) => {
+        return item.id === id ? { ...item, count: 0 } : item;
+      })
+    );
+  };
+
+  // total price of cart
   const getTotalCartAmount = () => {
     let totalAmount = 0;
-    for (const item in cartItems) {
-      if (cartItems[item] > 0) {
-        let itemInfo = data.find((product) => product.id === Number(item));
-        totalAmount += cartItems[item] * itemInfo.newPrice;
+    cartItems.map((item) => {
+      if (item.count > 0) {
+        const itemInfo = data.find((product) => product.id === item.id);
+        totalAmount += item.count * itemInfo.newPrice;
       }
-    }
+    });
     return totalAmount;
   };
 
   //checkout
   const checkout = () => {
-    setCartItems(getDefaultCart());
+    //   setCartItems([]);
   };
 
   const result = filteredData(data, selectedFilters, queries);
@@ -144,13 +214,13 @@ export const ContextAPIProvider = (props) => {
     handleSearchChange,
     handleButtonChange,
     handleRadioChange,
+    getProductCount,
     addToCart,
     removeFromCart,
     updateCartItemCount,
-    checkout,
+    deleteFromCart,
     getTotalCartAmount,
+    checkout,
   };
-  return (
-    <Context.Provider value={contextValue}>{props.children}</Context.Provider>
-  );
+  return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 };
