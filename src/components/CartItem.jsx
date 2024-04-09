@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../context/ContextAPI";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const CartItem = ({ id, img, title, newPrice }) => {
   const {
@@ -33,7 +34,12 @@ const CartItem = ({ id, img, title, newPrice }) => {
           <div className="w-fit count-handler">
             <button
               className="text-2xl px-4 border-none rounded-lg hover:bg-[#4c4c4c] hover:text-white bg-[rgb(19,19,19)] text-white"
-              onClick={() => removeFromCart(id)}
+              onClick={() => {
+                removeFromCart(id);
+                getProductCount(id) === 1
+                  ? toast.success("Removed From Cart")
+                  : "";
+              }}
             >
               -
             </button>
@@ -55,7 +61,12 @@ const CartItem = ({ id, img, title, newPrice }) => {
               +
             </button>
           </div>
-          <div onClick={() => deleteFromCart(id)}>
+          <div
+            onClick={() => {
+              deleteFromCart(id);
+              toast.success("Removed from Cart!");
+            }}
+          >
             <RiDeleteBin6Line className="text-[20px] text-red-500 hover:translate-y-[-2px] cursor-pointer" />
           </div>
         </div>

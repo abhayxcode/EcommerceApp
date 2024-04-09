@@ -8,11 +8,17 @@ export default {
       lg: { max: "1100px" },
       md: { max: "768px" },
       sm: { max: "540px" },
-      // => @media (max-width: 660px) },
     },
+
     extend: {
       boxShadow: {
         cart: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+      },
+      colors: {
+        primary: "#66A2E4",
+        // primary: "#265e55",
+        // "primary-light": "#4f9d91",
+        "primary-light": "#5f5690",
       },
     },
   },

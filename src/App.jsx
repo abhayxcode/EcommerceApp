@@ -8,22 +8,37 @@ import Footer from "./components/Footer.jsx";
 import Shop from "./pages/Shop.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import data from "./data/Products.js";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route
-          path="/product/:id"
-          element={<ProductDetail productList={data} />}
+    <>
+      <Router>
+        <Navbar />
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            duration: 2000,
+            style: {
+              background: "#363636",
+              color: "#fff",
+              padding: "10px 15px",
+              fontSize: "18px",
+            },
+          }}
         />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-      <Footer />
-    </Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route
+            path="/product/:id"
+            element={<ProductDetail productList={data} />}
+          />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </>
   );
 }
 

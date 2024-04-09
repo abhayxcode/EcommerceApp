@@ -1,7 +1,7 @@
 const data = [
   {
     id: 1,
-    price_Id: "price_1P2Am4SGY67LfqYOtAqAJy23",
+    price_Id: "price_1P3NuHSGY67LfqYOQG5wPsJV",
     img: "https://m.media-amazon.com/images/I/61KwCmF0bdL._AC_SL1500_.jpg",
     title: "Dell Inspiron 15 3000 Series",
     keywords: "Dell Inspiron 15 3000 Series laptops",
@@ -29,10 +29,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 2,
-    price_Id: "price_1P2An8SGY67LfqYOxxswgUB8",
+    price_Id: "price_1P3NvBSGY67LfqYOAhe1a6VQ",
     img: "https://m.media-amazon.com/images/I/71EWRyqzw0L._AC_SL1500_.jpg",
     title: "Canon EOS Rebel T7 DSLR",
     keywords: "Canon EOS Rebel T7 DSLR cameras",
@@ -62,7 +61,7 @@ const data = [
   },
   {
     id: 3,
-    price_Id: "price_1P2AncSGY67LfqYOvNOzlYtx",
+    price_Id: "price_1P3NvvSGY67LfqYOcg5TGDKD",
     img: "https://m.media-amazon.com/images/I/81Ql+nOEynL._AC_SL1500_.jpg",
     title: "HP ROG Strix G16",
     keywords: "HP ROG Strix G16 laptops",
@@ -92,7 +91,7 @@ const data = [
   },
   {
     id: 4,
-    price_Id: "",
+    price_Id: "price_1P3Ns7SGY67LfqYOjY0ZAmbt",
     img: "https://m.media-amazon.com/images/I/61KNJav3S9L._SL1500_.jpg",
     title: "boAt Airdopes 141",
     keywords: "boAt Airdopes 141 headphones earphones airdopes",
@@ -120,10 +119,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 5,
-    price_Id: "",
+    price_Id: "price_1P3NwVSGY67LfqYOcKoyz3Ld",
     img: "https://m.media-amazon.com/images/I/815uX7wkOZS._AC_SL1500_.jpg",
     title: "HP 14 - Intel Celeron N4020",
     keywords: "HP 14 - Intel Celeron N4020 laptops",
@@ -151,10 +149,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 6,
-    price_Id: "",
+    price_Id: "price_1P3NxISGY67LfqYOxwfLlpNx",
     img: "https://m.media-amazon.com/images/I/8195A49fZbL._SL1500_.jpg",
     title: "realme narzo 60 5G",
     keywords: "realme narzo 60 5G mobiles phones",
@@ -184,7 +181,7 @@ const data = [
   },
   {
     id: 7,
-    price_Id: "",
+    price_Id: "price_1P3NxwSGY67LfqYOjiYVq0si",
     img: "https://m.media-amazon.com/images/I/716n3g3U+yL._AC_SL1500_.jpg",
     title: "HP - Intel N4120 Quad-Core",
     keywords: "HP - Intel N4120 Quad-Core laptops",
@@ -212,10 +209,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 8,
-    price_Id: "",
+    price_Id: "price_1P3NzXSGY67LfqYODh6IMV98",
     img: "https://m.media-amazon.com/images/I/81swjZCbdiL._AC_SL1500_.jpg",
     title: "KODAK PIXPRO FZ55-BK",
     keywords: "KODAK PIXPRO FZ55-BK cameras",
@@ -245,7 +241,7 @@ const data = [
   },
   {
     id: 9,
-    price_Id: "",
+    price_Id: "price_1P3O0DSGY67LfqYOyJMqpLYw",
     img: "https://m.media-amazon.com/images/I/71TPda7cwUL._AC_SL1500_.jpg",
     title: "Apple 2020 MacBook Air",
     keywords: "Apple 2020 MacBook Air laptops",
@@ -273,10 +269,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 10,
-    price_Id: "",
+    price_Id: "price_1P3O1CSGY67LfqYOzzhX024d",
     img: "https://m.media-amazon.com/images/I/81C9A0E+8TL._AC_SL1500_.jpg",
     title: "Kodak FHD 1080",
     keywords: "Kodak FHD 1080 cameras",
@@ -306,7 +301,7 @@ const data = [
   },
   {
     id: 11,
-    price_Id: "",
+    price_Id: "price_1P3O26SGY67LfqYO80UytDP7",
     img: "https://m.media-amazon.com/images/I/61VuVU94RnL._SL1500_.jpg",
     title: "Apple iPhone 13 (128GB)",
     keywords: "Apple iPhone 13 (128GB) mobiles phones",
@@ -336,7 +331,7 @@ const data = [
   },
   {
     id: 12,
-    price_Id: "",
+    price_Id: "price_1P3O3GSGY67LfqYOBIfMTMNu",
     img: "https://m.media-amazon.com/images/I/61DF0nkzgxL._AC_SL1144_.jpg",
     title: 'HP 17.3" Flagship HD+',
     keywords: 'HP 17.3" Flagship HD+ laptops',
@@ -366,7 +361,7 @@ const data = [
   },
   {
     id: 13,
-    price_Id: "",
+    price_Id: "price_1P3O79SGY67LfqYO0g9brBOr",
     img: "https://m.media-amazon.com/images/I/71c-jiE2IcL._AC_SL1500_.jpg",
     title: "Canon FHD 1080P Kids",
     keywords: "Canon FHD 1080P Kids cameras",
@@ -394,10 +389,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 14,
-    price_Id: "",
+    price_Id: "price_1P3O83SGY67LfqYOnPLwgInF",
     img: "https://m.media-amazon.com/images/I/410mJHS12-L._AC_SL1000_.jpg",
     title: "HP W500 Webcam - 1080P HD",
     keywords: "HP W500 Webcam - 1080P HD cameras",
@@ -425,10 +419,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 15,
-    price_Id: "",
+    price_Id: "price_1P3OANSGY67LfqYOIXkfGBME",
     img: "https://m.media-amazon.com/images/I/81t6Av5DvXL._SL1500_.jpg",
     title: "Samsung Galaxy M04",
     keywords: "Samsung Galaxy M04 mobiles",
@@ -458,7 +451,7 @@ const data = [
   },
   {
     id: 16,
-    price_Id: "",
+    price_Id: "price_1P3OJOSGY67LfqYO3nASRZrd",
     img: "https://m.media-amazon.com/images/I/61XK43E1nKL._AC_SL1500_.jpg",
     title: "Dell WB5023 Webcam",
     keywords: "Dell WB5023 Webcam cameras",
@@ -488,7 +481,7 @@ const data = [
   },
   {
     id: 17,
-    price_Id: "",
+    price_Id: "price_1P3OKLSGY67LfqYOyrTPx6pY",
     img: "https://m.media-amazon.com/images/I/71dEY4Neo3L._SL1500_.jpg",
     title: "Realme narzo N53",
     keywords: "Realme narzo N53 mobiles",
@@ -516,10 +509,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 18,
-    price_Id: "",
+    price_Id: "price_1P3OLDSGY67LfqYOCILsQ3MW",
     img: "https://m.media-amazon.com/images/I/71G3TjxFpZL._AC_SL1500_.jpg",
     title: "Sony 4K Digital Cam",
     keywords: "Sony 4K Digital Cameras",
@@ -549,7 +541,7 @@ const data = [
   },
   {
     id: 19,
-    price_Id: "",
+    price_Id: "price_1P3OMtSGY67LfqYOZrwFFlI0",
     img: "https://m.media-amazon.com/images/I/81LKz2gs0SL._AC_SL1500_.jpg",
     title: 'HP 15.6" Touchscreen',
     keywords: 'HP 15.6" Touchscreen laptops',
@@ -579,7 +571,7 @@ const data = [
   },
   {
     id: 20,
-    price_Id: "",
+    price_Id: "price_1P3ONdSGY67LfqYO4zTJSNKs",
     img: "https://m.media-amazon.com/images/I/61upJ6FlFLL._AC_SL1500_.jpg",
     title: "2022 Apple MacBook Air",
     keywords: "2022 Apple MacBook Air laptops",
@@ -607,10 +599,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 21,
-    price_Id: "",
+    price_Id: "price_1P3OQJSGY67LfqYOSJ9xBREk",
     img: "https://m.media-amazon.com/images/I/71c211GncKL._AC_SL1500_.jpg",
     title: "KODAK PIXPRO WPZ2",
     keywords: "KODAK PIXPRO WPZ2 laptops",
@@ -640,7 +631,7 @@ const data = [
   },
   {
     id: 22,
-    price_Id: "",
+    price_Id: "price_1P3OT2SGY67LfqYOkxxpBfdN",
     img: "https://m.media-amazon.com/images/I/61HHS0HrjpL._SL1500_.jpg",
     title: "Apple iPhone 14 Pro",
     keywords: "Apple iPhone 14 Pro mobile phones",
@@ -668,10 +659,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 23,
-    price_Id: "",
+    price_Id: "price_1P3OUASGY67LfqYOX7TRuneI",
     img: "https://m.media-amazon.com/images/I/61RZDb2mQxL._SL1500_.jpg",
     title: "Samsung Galaxy S23 5G",
     keywords: "Samsung Galaxy S23 5G mobile phones",
@@ -701,7 +691,7 @@ const data = [
   },
   {
     id: 24,
-    price_Id: "",
+    price_Id: "price_1P3OUqSGY67LfqYOTbNjgxyD",
     img: "https://m.media-amazon.com/images/I/418AP8pw3KL._SL1500_.jpg",
     title: "Apple EarPods with Lightning",
     keywords: "Apple EarPods with Lightning headphones earphones earpods",
@@ -731,7 +721,7 @@ const data = [
   },
   {
     id: 25,
-    price_Id: "",
+    price_Id: "price_1P3OVzSGY67LfqYO22Zxao8a",
     img: "https://m.media-amazon.com/images/I/515jdxLlmaL._SL1500_.jpg",
     title: "boAt Rockerz",
     keywords: "boAt Rockerz headphones earphones",
@@ -759,10 +749,9 @@ const data = [
       },
     ],
   },
-
   {
     id: 26,
-    price_Id: "",
+    price_Id: "price_1P3OWeSGY67LfqYOiO3IvqTJ",
     img: "https://m.media-amazon.com/images/I/51xxA+6E+xL._SL1500_.jpg",
     title: "boAt Rockerz 450",
     keywords: "boAt Rockerz 450 headphones earphones",
@@ -792,13 +781,13 @@ const data = [
   },
   {
     id: 27,
-    price_Id: "",
+    price_Id: "price_1P3OXLSGY67LfqYOn4Nus3s8",
     img: "https://m.media-amazon.com/images/I/81-fFXQdPTL._SL1500_.jpg",
     title: "Samsung Galaxy M13",
     keywords: "Samsung Galaxy M13 mobiles phones",
     reviewCount: "123 reviews",
-    prevPrice: "199",
-    newPrice: "150",
+    prevPrice: "299",
+    newPrice: "200",
     company: "samsung",
     category: "mobile",
     newProduct: false,
@@ -822,7 +811,7 @@ const data = [
   },
   {
     id: 28,
-    price_Id: "",
+    price_Id: "price_1P3OXySGY67LfqYOBmPA6djN",
     img: "https://m.media-amazon.com/images/I/71QE00iB9IL._SL1500_.jpg",
     title: "Apple iPhone 11 (64GB)",
     keywords: "Apple iPhone 11 (64GB) mobiles phones",

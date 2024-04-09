@@ -5,28 +5,43 @@ import data from "../data/Products";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItems, getTotalCartAmount, checkout } = useContext(Context);
+  const { cartItems, getTotalCartAmount } = useContext(Context);
+
+  const finalCartForStripe = [];
+
+  cartItems.forEach((item) => {
+    item.count > 0
+      ? finalCartForStripe.push({
+          price_Id: data.find((product) => product.id === item.id).price_Id,
+          count: item.count,
+        })
+      : "";
+  });
+
+  const checkoutStripe = async () => {
+    await fetch("http://localhost:4000/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ items: finalCartForStripe }),
+    })
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((response) => {
+        console.log(response);
+        if (response.url) {
+          window.location.assign(response.url);
+        }
+      });
+
+    // setCartItems(getDefaultCart());
+  };
 
   const totalAmount = getTotalCartAmount();
   const navigate = useNavigate();
-
-  // const checkoutStripe = async () => {
-  //   await fetch("http://localhost:4000/checkout", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ items: data }),
-  //   })
-  //     .then((response) => {
-  //       return response.json();
-  //     })
-  //     .then((response) => {
-  //       if (response.url) {
-  //         window.location.assign(response.url);
-  //       }
-  //     });
-  // };
 
   return (
     <main className="min-h-[95vh] mt-[68px] flex flex-col justify-start items-center p-20 pt-10">
@@ -72,8 +87,8 @@ const Cart = () => {
               <button
                 className="font-semibold hover:bg-[#444444] hover:text-white cursor-pointer w-[180px] h-[50px] uppercase bg-[rgb(19,19,19)] text-white border-none m-3 p-1 rounded-lg text-[12px] tracking-wide"
                 onClick={() => {
-                  // checkoutStripe();
-                  checkout();
+                  checkoutStripe();
+                  // navigate("/");
                 }}
               >
                 Checkout

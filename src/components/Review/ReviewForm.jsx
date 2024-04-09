@@ -1,13 +1,17 @@
 import { useRef } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 const ReviewForm = () => {
   const reviewForm = useRef();
 
   const submitReview = (e) => {
-    e.preventDefault();
-    reviewForm.current.reset();
+    if (reviewForm.current.checkValidity()) {
+      e.preventDefault();
+      reviewForm.current.reset();
+      toast.success("Review Submitted");
+    }
   };
   return (
     <div className="flex flex-col font-raleway gap-6 items-center justify-start w-full border border-solid border-gray-300 p-8">
@@ -29,10 +33,10 @@ const ReviewForm = () => {
                 Your Name
               </h2>
               <input
-                name="frame48096015"
                 placeholder="Mr. Raj"
                 className="outline-none border border-gray-300 border-solid p-3 placeholder:text-gray-400 sm:pr-5 text-gray-500 text-left text-sm tracking-[-0.50px] w-full"
                 type="text"
+                required
               />
             </div>
             {/* Email */}
@@ -45,6 +49,7 @@ const ReviewForm = () => {
                 placeholder="raj@gmail.com"
                 className="outline-none border border-gray-300 border-solid p-3 placeholder:text-gray-400 sm:pr-5 text-gray-500 text-left text-sm tracking-[-0.50px] w-full"
                 type="email"
+                required
               />
             </div>
             {/* Rating */}
@@ -71,6 +76,7 @@ const ReviewForm = () => {
             <textarea
               className="outline-none resize-none border border-gray-300 border-solid h-[220px] md:h-auto p-4 w-full text-start"
               placeholder="Write your review here...."
+              required
             />
           </div>
         </div>

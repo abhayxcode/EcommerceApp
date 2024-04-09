@@ -9,6 +9,7 @@ import ReviewForm from "../components/Review/ReviewForm";
 import { useParams } from "react-router-dom";
 import SpecialProduct from "../components/Products/SpecialProduct";
 import { Context } from "../context/ContextAPI";
+import toast from "react-hot-toast";
 
 const ProductDetail = ({ productList }) => {
   let { id } = useParams();
@@ -95,7 +96,10 @@ const ProductDetail = ({ productList }) => {
                       : "cursor-pointer"
                   }`}
                   onClick={() => {
-                    getProductCount(id) == 0 ? "" : removeFromCart(id);
+                    getProductCount(id) === 0 ? "" : removeFromCart(id);
+                    getProductCount(id) === 1
+                      ? toast.success("Removed from Cart!")
+                      : "";
                   }}
                 />
                 <input
@@ -113,11 +117,21 @@ const ProductDetail = ({ productList }) => {
                 />
                 <FiPlusCircle
                   className="cursor-pointer h-6 w-6"
-                  onClick={() => addToCart(id)}
+                  onClick={() => {
+                    addToCart(id);
+                    getProductCount(id) === 0
+                      ? toast.success("Added to Cart!")
+                      : "";
+                  }}
                 />
               </div>
               <div
-                onClick={() => addToCart(id)}
+                onClick={() => {
+                  addToCart(id);
+                  getProductCount(id) === 0
+                    ? toast.success("Added to Cart!")
+                    : "";
+                }}
                 className="hover:bg-[#4f9d91] cursor-pointer bg-[#214e47] justify-center sm:p-5  py-2 px-5 text-lg text-white tracking-[-0.50px] w-auto"
               >
                 Add to Cart

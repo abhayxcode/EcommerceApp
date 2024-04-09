@@ -6,6 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 
+import toast from "react-hot-toast";
 import { useContext } from "react";
 import { Context } from "../../context/ContextAPI";
 import { Link } from "react-router-dom";
@@ -23,7 +24,12 @@ const Card = ({ id, img, title, prevPrice, newPrice, newProduct }) => {
       )}
       <div
         className="absolute right-[7%] top-[4%] cursor-pointer w-5 h-5 "
-        onClick={() => setWishlisted(!wishlisted)}
+        onClick={() => {
+          !wishlisted
+            ? toast.success("Added to wishlist")
+            : toast.success("Removed from wishlist");
+          setWishlisted(!wishlisted);
+        }}
       >
         {wishlisted ? (
           <FaHeart className="text-[#535353] w-full h-full" />
@@ -64,6 +70,7 @@ const Card = ({ id, img, title, prevPrice, newPrice, newProduct }) => {
           className="cursor-pointer w-full px-5 py-2 mt-3 bg-[#214E47] hover:bg-[#4f9d91] text-white flex items-center justify-center gap-2"
           onClick={() => {
             addToCart(id);
+            getProductCount(id) === 0 ? toast.success("Added to Cart!") : "";
           }}
         >
           <p>Add to Cart</p>

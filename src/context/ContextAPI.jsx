@@ -149,7 +149,6 @@ export const ContextAPIProvider = ({ children }) => {
 
   const getProductCount = (id) => {
     const count = cartItems.find((item) => item.id === id)?.count;
-    // if (count === undefined) return 0;
     return count;
   };
   // Add one to cartItem count
@@ -192,18 +191,24 @@ export const ContextAPIProvider = ({ children }) => {
   // total price of cart
   const getTotalCartAmount = () => {
     let totalAmount = 0;
+    let cartCount = 0;
     cartItems.map((item) => {
       if (item.count > 0) {
         const itemInfo = data.find((product) => product.id === item.id);
         totalAmount += item.count * itemInfo.newPrice;
+        cartCount++;
       }
     });
+
     return totalAmount;
   };
-
-  //checkout
-  const checkout = () => {
-    //   setCartItems([]);
+  //Final Cart COunt
+  const getFinalCartCount = () => {
+    let cartCount = 0;
+    cartItems.map((item) => {
+      if (item.count > 0) cartCount++;
+    });
+    return cartCount;
   };
 
   const result = filteredData(data, selectedFilters, queries);
@@ -220,7 +225,7 @@ export const ContextAPIProvider = ({ children }) => {
     updateCartItemCount,
     deleteFromCart,
     getTotalCartAmount,
-    checkout,
+    getFinalCartCount,
   };
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 };

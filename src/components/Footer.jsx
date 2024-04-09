@@ -80,7 +80,7 @@ const Footer = () => {
       <div className="flex flex-col md:gap-10 gap-[50px] items-center justify-center w-full">
         <div className="flex md:flex-col flex-row md:gap-10 items-start justify-between w-full">
           <div className="flex flex-col gap-4 items-start justify-start w-auto">
-            <h2 className="md:text-3xl uppercase font-bold text-[32px] text-[#2bc0a7] tracking-[-0.50px] w-auto">
+            <h2 className="md:text-3xl uppercase font-bold text-[32px] text-primary-light tracking-[-0.50px] w-auto">
               Gadgify.
             </h2>
             <p className="leading-[30.00px] max-w-[360px] md:max-w-full text-base text-gray-50">
