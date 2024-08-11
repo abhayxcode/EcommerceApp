@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { FaHeart, FaRegStarHalfStroke } from "react-icons/fa6";
 import { MdFavorite } from "react-icons/md";
@@ -32,6 +32,11 @@ const ProductDetail = ({ productList }) => {
 
   const [reviewState, setReviewState] = useState(false);
   const [wishlisted, setWishlisted] = useState(false);
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -88,7 +93,7 @@ const ProductDetail = ({ productList }) => {
             </div>
             {/* Add to cart and item count */}
             <div className="flex gap-[20px] items-center justify-start">
-              <div className="w-fit count-handler border border-black border-solid flex gap-[15px] items-center justify-center p-2">
+              <div className="w-fit count-handler border border-dark rounded-md border-solid flex gap-[15px] items-center justify-center p-2">
                 <FiMinusCircle
                   className={` h-6 w-6 ${
                     getProductCount(id) == 0
@@ -132,7 +137,7 @@ const ProductDetail = ({ productList }) => {
                     ? toast.success("Added to Cart!")
                     : "";
                 }}
-                className="hover:bg-[#4f9d91] cursor-pointer bg-[#214e47] justify-center sm:p-5  py-2 px-5 text-lg text-white tracking-[-0.50px] w-auto"
+                className="hover:bg-dark-variant cursor-pointer bg-dark rounded-md justify-center sm:p-5  py-2 px-5 text-lg text-white tracking-[-0.50px] w-auto"
               >
                 Add to Cart
               </div>

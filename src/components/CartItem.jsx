@@ -33,7 +33,7 @@ const CartItem = ({ id, img, title, newPrice }) => {
         <div className="mt-5 flex justify-between items-center">
           <div className="w-fit count-handler">
             <button
-              className="text-2xl px-4 border-none rounded-lg hover:bg-[#4c4c4c] hover:text-white bg-[rgb(19,19,19)] text-white"
+              className="text-2xl px-4 border-none rounded-lg hover:bg-dark-variant  bg-dark text-white"
               onClick={() => {
                 removeFromCart(id);
                 getProductCount(id) === 1
@@ -55,7 +55,7 @@ const CartItem = ({ id, img, title, newPrice }) => {
               }}
             />
             <button
-              className="text-2xl px-4 border-none rounded-lg hover:bg-[#4c4c4c] hover:text-white bg-[rgb(19,19,19)] text-white"
+              className="text-2xl px-4 border-none rounded-lg hover:bg-dark-variant  bg-dark  text-white"
               onClick={() => addToCart(id)}
             >
               +

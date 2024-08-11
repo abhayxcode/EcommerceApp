@@ -4,13 +4,6 @@ import Card from "../components/Products/ProductCard.jsx";
 
 export const Context = createContext(null);
 
-// const getDefaultCart = () => {
-//   let cart = {};
-//   for (let i = 1; i < data.length + 1; i++) {
-//     cart[i] = 0;
-//   }
-//   return cart;
-// };
 const getDefaultCart = () => {
   let cart = [];
   for (let i = 0; i < data.length; i++) {
@@ -20,6 +13,8 @@ const getDefaultCart = () => {
 };
 
 export const ContextAPIProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+
   const [selectedFilters, setSelectedFilters] = useState({
     price: null,
     category: null,
@@ -27,12 +22,11 @@ export const ContextAPIProvider = ({ children }) => {
   }); //radio-btns and recommendation btn
   const [queries, setQueries] = useState([]); //Search bar query
 
-  // const [cartItems, setCartItems] = useState(getDefaultCart()); // Cart Items Count by id
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   // ------------ Search filter Functionality ------------
   const handleSearchChange = (e) => {
-    setQueries(e.target.value.split(" "));
+    setQueries(e.target.value?.split(" "));
   };
 
   const filterItems = data.filter((item) =>
@@ -96,56 +90,8 @@ export const ContextAPIProvider = ({ children }) => {
       );
     }
 
-    return filteredProducts.length === 0 ? (
-      <div className="w-full  font-bold  absolute h-full top-0 flex flex-col items-center justify-center">
-        <h1 className="text-[54px]  xl:text-4xl md:hidden">
-          No such products available
-        </h1>
-        <button
-          className="p-3 bg-[#214E47] hover:bg-[#4f9d91] text-white cursor-pointer mt-3"
-          onClick={() => window.location.reload()}
-        >
-          Reset All Filters
-        </button>
-      </div>
-    ) : (
-      filteredProducts.map((item) => <Card key={item.id} {...item} />)
-    );
+    return filteredProducts;
   }
-
-  // Add one to cartItem count
-  // const addToCart = (itemId) => {
-  //   setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-  // }
-
-  //Remove one from cartItem count
-  // const removeFromCart = (itemId) => {
-  // setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
-  // }
-
-  // update cartitems count at once through input
-  //  const updateCartItemCount = (newAmount, itemId) => {
-  // setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
-  // };
-
-  // total price of cart
-  //  const getTotalCartAmount = () => {
-  //   let totalAmount = 0;
-  //   for (const item in cartItems) {
-  //     if (cartItems[item] > 0) {
-  //       let itemInfo = data.find((product) => product.id === Number(item));
-  //       totalAmount += cartItems[item] * itemInfo.newPrice;
-  //     }
-  //   }
-  //   return totalAmount;
-  // };
-
-  //checkout
-  // const checkout = () => {
-  //   setCartItems(getDefaultCart());
-  // };
-
-  // Find the quantity of individual item
 
   const getProductCount = (id) => {
     const count = cartItems.find((item) => item.id === id)?.count;
@@ -214,6 +160,8 @@ export const ContextAPIProvider = ({ children }) => {
   const result = filteredData(data, selectedFilters, queries);
 
   const contextValue = {
+    user,
+    setUser,
     result,
     cartItems,
     handleSearchChange,

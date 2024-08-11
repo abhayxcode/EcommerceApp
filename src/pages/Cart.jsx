@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import CartItem from "../components/CartItem";
 import { Context } from "../context/ContextAPI";
 import data from "../data/Products";
@@ -43,6 +43,11 @@ const Cart = () => {
   const totalAmount = getTotalCartAmount();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="min-h-[95vh] mt-[68px] flex flex-col justify-start items-center p-20 pt-10">
       <h1 className="uppercase text-4xl font-bold mb-10">
@@ -85,7 +90,7 @@ const Cart = () => {
           <div className="flex mt-4 justify-center">
             {totalAmount > 0 ? (
               <button
-                className="font-semibold hover:bg-[#444444] hover:text-white cursor-pointer w-[180px] h-[50px] uppercase bg-[rgb(19,19,19)] text-white border-none m-3 p-1 rounded-lg text-[12px] tracking-wide"
+                className="font-semibold hover:bg-dark-variant hover:text-light cursor-pointer w-[180px] h-[50px] uppercase bg-dark text-light border-none m-3 p-1 rounded-lg text-[12px] tracking-wide"
                 onClick={() => {
                   checkoutStripe();
                   // navigate("/");
@@ -97,7 +102,7 @@ const Cart = () => {
               ""
             )}
             <button
-              className="font-semibold hover:bg-[#444444] hover:text-white cursor-pointer w-[180px] h-[50px] uppercase bg-[rgb(19,19,19)] text-white border-none m-3 p-1 rounded-lg text-[12px] tracking-wide"
+              className="font-semibold hover:bg-dark-variant hover:text-light cursor-pointer w-[180px] h-[50px] uppercase bg-dark text-light border-none m-3 p-1 rounded-lg text-[12px] tracking-wider"
               onClick={() => navigate("/shop")}
             >
               Continue Shopping

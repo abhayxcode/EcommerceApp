@@ -11,14 +11,17 @@ export default {
     },
 
     extend: {
+      fontFamily: {
+        sans: ["Raleway", "sans-serif"],
+      },
       boxShadow: {
         cart: "0px 3px 15px rgba(0, 0, 0, 0.2)",
       },
       colors: {
-        primary: "#66A2E4",
-        // primary: "#265e55",
-        // "primary-light": "#4f9d91",
-        "primary-light": "#5f5690",
+        light: "#fff",
+        "light-variant": "#d9d9d9",
+        dark: "rgb(32,32,32)",
+        "dark-variant": "#333",
       },
     },
   },

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import productList from "../data/Products";
 import homeBanner from "../assets/homeBanner.png";
 import laptopBanner from "../assets/laptop.png";
@@ -6,19 +6,20 @@ import gadgetBanner from "../assets/gadgets.jpg";
 import specialProduct1 from "../assets/latestProduct1.png";
 import specialProduct2 from "../assets/latestProduct2.webp";
 // Company logos
-import logoSony from "../assets/logos/logo_sony.jpg";
-import logoIphone from "../assets/logos/logo_iphone.jpg";
+import logoSony from "../assets/logos/logo_sony.png";
+import logoIphone from "../assets/logos/logo_iphone.png";
 import logoLenevo from "../assets/logos/logo_lenevo.png";
 import logoHp from "../assets/logos/logo_hp.png";
-import logoDell from "../assets/logos/logo_dell.jpg";
-import logoCanon from "../assets/logos/logo_canon.jpg";
+import logoDell from "../assets/logos/logo_dell.png";
+import logoCanon from "../assets/logos/logo_canon.png";
 import { IoRocketOutline } from "react-icons/io5";
 import { MdOutlineLock } from "react-icons/md";
 import { FaArrowRotateRight } from "react-icons/fa6";
 import { IoCallOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Card from "../components/Products/ProductCard";
 import SpecialProduct from "../components/Products/SpecialProduct";
+import LoginForm from "../components/LoginForm";
 
 const brandLogos = [
   { logo: logoSony, link: "https://www.sony.com/" },
@@ -83,24 +84,32 @@ const safetyTips = [
 const Home = () => {
   const newestProducts = productList.filter((product) => product.newProduct);
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <main className="mt-[68px]">
+    <main className="mt-[70px]  bg-light">
       {/* Orange banner */}
-      <section className="flex items-end justify-center w-full max-h-[calc(100vh-68px)] bg-orange-100 md:px-10 sm:px-5 px-[75px] pt-20">
+      <section className="flex items-end justify-center w-full max-h-[calc(100vh-140px)]  md:px-10 sm:px-5 px-[75px] pt-20 ">
         <div className="flex w-full h-full md:flex-col md:gap-10 gap-[60px] items-center justify-start max-w-[1290px]">
           <div className="w-[45%] flex flex-col gap-[30px] items-start justify-start pb-20 ">
-            <h2 className="text-black-900 text-xl tracking-[-0.50px] w-full">
+            <h2 className=" text-xl tracking-[-0.50px] w-full">
               One stop solution for all Gadgets
             </h2>
-            <h2 className="leading-[60.00px] md:text-[38px] text-[40px] font-bold text-left text-black-900 tracking-[-0.50px]">
+            <h2 className="leading-[60.00px] md:text-[38px] text-[40px] font-bold text-left tracking-[-0.50px]">
               Discover the latest tech
               <br /> from cameras to phones
               <br />
               to elevate your lifestyle.
             </h2>
+
             <Link
-              className="bg-sky-950 border-2 border-sky-950 border-solid cursor-pointer font-medium leading-[normal] min-w-[218px] py-[18px] text-center text-xl text-yellow-100 tracking-[-0.50px]"
               to="/shop"
+              className="transition ease-in-out duration-200 bg-dark text-light rounded-full hover:bg-dark-variant cursor-pointer font-medium leading-[normal] min-w-[218px] py-[18px] text-center text-xl  tracking-[-0.50px]"
             >
               Shop Now
             </Link>
@@ -115,7 +124,7 @@ const Home = () => {
         </div>
       </section>
       {/* Black Brand Banner */}
-      <section className="bg-black flex flex-col items-center justify-center gap-20 md:px-10 px-[170px] py-[80px] w-full">
+      <section className="bg-dark flex flex-col items-center justify-center gap-20 md:px-10 px-[170px] py-[80px] w-full">
         <h2 className="text-center text-gray-50 text-2xl tracking-[-0.50px] w-full">
           We are associated with Various successful brands
         </h2>
@@ -132,37 +141,15 @@ const Home = () => {
         </div>
       </section>
       {/* Special Models */}
-      <section className="flex items-center justify-center md:px-10 p-[75px]  w-full bg-orange-50">
+      <section className="flex items-center justify-center md:px-10 p-[75px]  w-full ">
         <div className="grid gap-20 md:grid-cols-1 grid-cols-2 justify-center max-w-[1290px] mx-auto w-full">
           {specialProducts.map(({ img, title, text }, index) => (
-            // <div key={index} className="flex justify-center items-center p-6 bg-gradient-to-r from-[#27383C] to-[#274951]">
-            //   <div className="flex flex-col items-start gap-6 w-[55%] text-white">
-            //     <h2 className="text-lg tracking-[-0.50px] w-full">{title}</h2>
-            //     <h2 className="md:max-w-full max-w-xs text-4xl md:text-[34px] font-bold  tracking-[-0.50px] mt-3">
-            //       {text}
-            //     </h2>
-
-            //     <Link
-            //       className="common-pointer border-2 border-gray-50 border-solid cursor-pointer font-medium leading-[normal] min-w-[155px] py-[15px] text-base text-center text-gray-50 tracking-[-0.50px]"
-            //       to="/shop"
-            //     >
-            //       Shop Now
-            //     </Link>
-            //   </div>
-            //   <div className="w-[45%] ">
-            //     <img
-            //       className="h-full md:h-auto max-h-[200px] object-cover mx-auto"
-            //       src={img}
-            //       alt="sammoghadamkh"
-            //     />
-            //   </div>
-            // </div>
             <SpecialProduct key={index} img={img} title={title} text={text} />
           ))}
         </div>
       </section>
       {/* Newest Products*/}
-      <section className="flex items-center justify-center md:px-10 p-[75px] pb-[160px] w-full bg-orange-50">
+      <section className="flex items-center justify-center md:px-10 p-[75px] pb-[160px] w-full ">
         <div className="max-w-[1290px] mx-auto w-full flex flex-col justify-center items-center gap-3">
           <h1 className="md:text-[34px] text-[40px] text-black font-bold text-center tracking-[-0.50px] w-full">
             Our Newest Products
@@ -190,7 +177,7 @@ const Home = () => {
         </div>
       </section>
       {/* Laptop Banner*/}
-      <section className="flex items-center justify-center w-full h-[50vh] bg-orange-100 md:px-10 sm:px-5 px-[75px] py-20 ">
+      <section className="flex items-center justify-center w-full h-[50vh] bg-light-variant md:px-10 sm:px-5 px-[75px] py-20 ">
         <div className="flex w-full h-full md:flex-col md:gap-10 gap-[60px] items-center justify-between max-w-[1290px]">
           <div className="flex flex-col gap-[10px] items-start justify-start w-[35%] ">
             <h2 className="text-black-900 text-xl tracking-[-0.50px] w-full">
@@ -218,7 +205,7 @@ const Home = () => {
         </div>
       </section>
       {/* Safety */}
-      <section className="flex flex-col font-raleway items-center justify-center md:px-10 p-[75px]  w-full">
+      <section className="flex flex-col font-raleway items-center bg-transparent justify-center md:px-10 p-[75px]  w-full ">
         <div className="flex md:flex-col md:gap-10 gap-[85px] items-center justify-between max-w-[1290px] mx-auto w-full ">
           <div className="flex flex-1 flex-col gap-[50px] h-full items-start justify-start w-full">
             <h2 className="font-bold leading-[60.00px] max-w-[602px] md:max-w-full md:text-[38px] text-[40px] text-black tracking-[-0.50px]">

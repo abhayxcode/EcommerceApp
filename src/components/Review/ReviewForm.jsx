@@ -80,10 +80,11 @@ const ReviewForm = () => {
             />
           </div>
         </div>
+        {/* Submit button */}
         <button
           type="submit"
           onClick={(e) => submitReview(e)}
-          className="bg-[#214E47]  cursor-pointer font-medium leading-[normal] min-w-[155px] py-[12px] text-base text-center text-white tracking-[-0.50px] hover:bg-[#4f9d91]"
+          className="bg-dark  cursor-pointer font-medium leading-[normal] min-w-[155px] py-[12px] text-base text-center text-light tracking-[-0.50px] hover:bg-dark-variant rounded-md"
         >
           Submit
         </button>

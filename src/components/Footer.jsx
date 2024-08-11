@@ -76,11 +76,11 @@ const footerSocials = [
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-10 px-20">
+    <footer className="bg-dark py-10 px-20">
       <div className="flex flex-col md:gap-10 gap-[50px] items-center justify-center w-full">
         <div className="flex md:flex-col flex-row md:gap-10 items-start justify-between w-full">
           <div className="flex flex-col gap-4 items-start justify-start w-auto">
-            <h2 className="md:text-3xl uppercase font-bold text-[32px] text-primary-light tracking-[-0.50px] w-auto">
+            <h2 className="md:text-3xl uppercase font-bold text-[32px] text-light tracking-[-0.50px] w-auto">
               Gadgify.
             </h2>
             <p className="leading-[30.00px] max-w-[360px] md:max-w-full text-base text-gray-50">
@@ -96,7 +96,7 @@ const Footer = () => {
               key={index}
               className="flex flex-col gap-5 items-start justify-start w-[210px]"
             >
-              <h2 className="text-gray-50 text-xl tracking-[-0.50px] w-auto">
+              <h2 className="text-light text-xl font-medium tracking-[-0.50px] w-auto">
                 {heading}
               </h2>
               <div className="flex flex-col gap-6 items-start justify-start w-auto">
@@ -104,7 +104,7 @@ const Footer = () => {
                   <a
                     key={index}
                     href={link}
-                    className="text-gray-400 text-sm tracking-[-0.50px] w-auto"
+                    className="text-light-variant text-sm tracking-[0.2px] w-auto hover:text-light"
                   >
                     {title}
                   </a>
@@ -123,7 +123,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href="/"
-                  className="bg-yellow-100 flex h-10 items-center justify-center p-2 rounded-[50%] w-10"
+                  className="bg-light-variant hover:bg-light flex h-10 items-center justify-center p-2 rounded-[50%] w-10"
                 >
                   {item}
                 </a>

@@ -16,7 +16,7 @@ const Card = ({ id, img, title, prevPrice, newPrice, newProduct }) => {
   const [wishlisted, setWishlisted] = useState(false);
 
   return (
-    <div className="w-full min-w-[270px] max-w-[320px] relative p-5 bg-white rounded-xl flex flex-col items-center justify-between gap-0  md:m-[10px] sm:w-[42vw]">
+    <div className="shadow-md shadow-gray-300 bg-white border-2 border-gray-50 w-full min-w-[270px] max-w-[320px] relative p-5 rounded-xl flex flex-col items-center justify-between gap-0  md:m-[10px] sm:w-[42vw] ">
       {newProduct && (
         <h2 className="absolute left-[5%] top-[4%] bg-red-600 px-[7px] text-sm text-white tracking-[-0.50px]">
           New
@@ -45,13 +45,16 @@ const Card = ({ id, img, title, prevPrice, newPrice, newProduct }) => {
         <img
           src={img}
           alt={title}
-          className="hover:scale-[105%] w-full h-full object-contain"
+          className="transition hover:scale-[1.05] w-full h-full object-contain"
         />
       </Link>
       <div className="pt-3 w-full flex flex-col justify-center items-start gap-1">
-        <h3 className="uppercase text-[18px] font-semibold sm:text-[14px] text-nowrap max-w-[230px] overflow-hidden">
+        <Link
+          to={`/product/${id}`}
+          className="uppercase text-[18px] font-semibold sm:text-[14px] text-nowrap max-w-[230px] overflow-hidden"
+        >
           {title.length >= 18 ? title.slice(0, 18) + "..." : title}
-        </h3>
+        </Link>
 
         <div className="w-full flex justify-between items-center sm:text-[12px]">
           <div className="text-nowrap font-bold">
@@ -67,7 +70,7 @@ const Card = ({ id, img, title, prevPrice, newPrice, newProduct }) => {
         </div>
 
         <div
-          className="cursor-pointer w-full px-5 py-2 mt-3 bg-[#214E47] hover:bg-[#4f9d91] text-white flex items-center justify-center gap-2"
+          className="z-10 w-full px-5 py-2 mt-3 rounded-lg transition ease-in-out duration-200 flex items-center justify-center gap-2 bg-dark text-light hover:bg-dark-variant cursor-pointer font-medium leading-[normal] tracking-[-0.50px]"
           onClick={() => {
             addToCart(id);
             getProductCount(id) === 0 ? toast.success("Added to Cart!") : "";

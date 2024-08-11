@@ -26,10 +26,6 @@ const Recommended = () => {
   // };
   return (
     <div className="p-5 flex flex-col items-center w-full  mb-5 absolute top-0 ">
-      {/* <button className="close-btn hidden" onClick={closeSidebar}>
-        <ImCross className="close-icon" />
-      </button> */}
-
       <div className="flex w-full justify-around">
         {brands.map((item, index) => {
           return (
