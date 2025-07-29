@@ -7,9 +7,9 @@ const Products = () => {
 
   return (
     <>
-      <section className="w-[95%] grid grid-cols-4 2xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1  gap-5 sm:ml-2 sm:mt-2">
+      <section className="bg-slate-300 w-[95%] h-full grid grid-cols-4 2xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1  gap-5 sm:ml-2 sm:mt-2">
         {result.length === 0 ? (
-          <div className="w-full  font-bold  absolute h-full top-0 flex flex-col items-center justify-center">
+          <div className="w-full col-span-4 2xl:col-span-3 lg:col-span-2 sm:col-span-1 bg-black font-bold h-full flex flex-col items-center justify-center">
             <h1 className="text-[54px]  xl:text-4xl md:hidden">
               No such products available
             </h1>
